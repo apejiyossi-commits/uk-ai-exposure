@@ -23,7 +23,8 @@ DER = ROOT / "data" / "derived"
 
 QUARTER = {"jm": 1, "aj": 2, "js": 3, "od": 4}
 KEEP = ["AGE", "SEX", "ILODEFR", "PWT24", "SOC20M", "SC20MMN", "SC20LMN", "WNLEFT11",
-        "EMPLEN", "FTPTWK", "PUBLICR", "HIQUL22D", "GOVTOF2", "THISWV", "GRSSWK"]
+                "EMPLEN", "FTPTWK", "PUBLICR", "HIQUL22D", "GOVTOF2", "THISWV", "GRSSWK",
+        "CRYOX7_EUL_Main", "STUCUR"]
 
 
 def wquantile(x, w, q):
@@ -136,6 +137,9 @@ lfs["degree"] = (lfs["hiqul22d"] == 1).astype(int)
 lfs["london"] = (lfs["govtof2"] == 8).astype(int)
 lfs["public"] = (lfs["publicr"] == 2).astype(int)
 lfs["parttime"] = (lfs["ftptwk"] == 2).astype(int)
+for col, new, code in [("cryox7_eul_main", "uk_born", 1), ("stucur", "ft_student", 1)]:
+    src = lfs[col] if col in lfs else pd.Series(np.nan, index=lfs.index)
+    lfs[new] = (src == code).astype(float).where(src.notna())   # missing stays missing
 
 lfs.to_parquet(RAW / "lfs_analysis.parquet", index=False)
 

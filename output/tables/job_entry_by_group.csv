@@ -1,0 +1,15 @@
+group,estimate_pp,se_pp,p,change_%,high_2022,high_2023_26,high_chg_%,zero_2022,zero_2023_26,zero_chg_%,people,starts_high,starts_zero,comparison,ci_low_%,ci_high_%,starts_young
+All 22-25 (main),-0.8859,0.2439,0.0003,-39.6861,2.2322,1.5747,-29.4583,1.6586,2.0543,23.8577,38486.0,724.0,698.0,"high vs near-zero, ages 22-25",,,
+UK-born,-0.9993,0.2517,0.0001,-46.2463,2.1609,1.4746,-31.7576,1.4874,2.0505,37.8524,34024.0,613.0,606.0,"high vs near-zero, ages 22-25",,,
+Born outside the UK,-0.2895,0.8103,0.7209,-10.9417,2.6455,2.0883,-21.0613,2.6286,2.0829,-20.7604,4452.0,111.0,92.0,"high vs near-zero, ages 22-25",,,
+Not a full-time student,-0.9937,0.2511,0.0001,-43.9968,2.2586,1.5563,-31.0936,1.4992,2.0381,35.948,35790.0,662.0,628.0,"high vs near-zero, ages 22-25",,,
+Full-time students,0.2909,0.9716,0.7646,14.8408,1.9602,1.8062,-7.858,3.3053,2.259,-31.6563,2696.0,62.0,70.0,"high vs near-zero, ages 22-25",,,
+Graduates (from 2022),-1.7497,0.5221,0.0008,-48.2078,3.6296,2.3693,-34.7236,1.2599,1.7493,38.8458,13293.0,347.0,200.0,"high vs near-zero, ages 22-25",,,
+Non-graduates (from 2022),-0.5971,0.3669,0.1037,-51.5232,1.1588,0.9073,-21.7029,1.9649,2.3105,17.5872,16289.0,170.0,310.0,"high vs near-zero, ages 22-25",,,
+UK-born and not a full-time student,-1.1255,0.2581,0.0,-50.9829,2.2077,1.4403,-34.7616,1.3973,2.055,47.0702,31929.0,565.0,557.0,"high vs near-zero, ages 22-25",,,
+"High-exposure starts, 2021-26",,,0.0267,-18.6723,,,,,,,,,,"ages 22-25 vs 26-64, same job type",-32.2581,-2.3619,724.0
+"High-exposure starts, 2022-26",,,0.3753,-10.0658,,,,,,,,,,"ages 22-25 vs 26-64, same job type",-28.8667,13.7042,517.0
+"High-exposure starts, 2022-26, UK-born non-students",,,0.1511,-17.6055,,,,,,,,,,"ages 22-25 vs 26-64, same job type",-36.748,7.3303,400.0
+"Near-zero starts, 2021-26",,,0.0004,40.6659,,,,,,,,,,"ages 22-25 vs 26-64, same job type",16.4887,69.8611,698.0
+"Near-zero starts, 2022-26",,,0.0,68.8354,,,,,,,,,,"ages 22-25 vs 26-64, same job type",31.3976,116.9399,510.0
+"Near-zero starts, 2022-26, UK-born non-students",,,0.0,113.0457,,,,,,,,,,"ages 22-25 vs 26-64, same job type",59.8877,183.8773,407.0
