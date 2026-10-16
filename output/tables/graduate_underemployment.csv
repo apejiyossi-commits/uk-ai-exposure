@@ -1,0 +1,6 @@
+comparison,estimate_pp,se_pp,p,base_2022_%,people,graduates
+"All employed graduates: 22-25 vs 26-35, non-graduate job",1.7067,1.2844,0.1839,35.8186,70132,
+"Graduate job starters: 22-25 vs 26-35, non-graduate job",-1.0706,4.9567,0.829,42.9273,2882,
+"Graduate pay premium, full-time starters 22-25, high-exposure jobs (%)",21.2691,8.194,0.021,,102,71.0
+"Graduate pay premium, full-time starters 22-25, near-zero jobs (%)",20.5078,12.8965,0.1522,,95,36.0
+"Graduate pay premium, full-time starters 22-25, all jobs (%)",19.7716,5.5758,0.0013,,372,220.0
