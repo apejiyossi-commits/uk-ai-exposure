@@ -218,6 +218,7 @@ no_imp_u = lfs["imp_unit"].fillna(0) == 0
 rows = [
     entry_did(y, "Main: top 25% vs near-zero, ages 22-25"),
     entry_did(y[y["year"] >= 2022], "Drop 2021 (COVID reopening)"),
+        entry_did(y[~y["year"].isin([2023, 2024])], "Drop 2023-24 (low LFS response)"),
     entry_did(y, "Proportional (Poisson)", poisson=True),
     entry_did(entry_sample(22, 25, dest_lo=eu < p50u), "Comparison: all jobs below median"),
     entry_did(entry_sample(22, 25, dest_hi=eu >= p90u), "Treated: top 10% exposure jobs"),
