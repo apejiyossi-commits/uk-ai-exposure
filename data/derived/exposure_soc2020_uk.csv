@@ -1,0 +1,413 @@
+soc20,exposure,imputed,title
+1111,0.125280053620291,0.0,Chief executives and senior officials
+1112,0.0,0.0,Elected officers and representatives
+1121,0.0132,0.0,Production managers and directors in manufacturing
+1122,0.1186,0.0,Production managers and directors in construction
+1123,0.06952170902883156,0.0,Production managers and directors in mining and energy
+1131,0.34508788839192295,0.0,Financial managers and directors
+1132,0.15761465151422105,0.0,"Marketing, sales and advertising directors"
+1133,0.19725681909312176,0.0,Public relations and communications directors
+1134,0.0956,0.0,Purchasing managers and directors
+1135,0.07010128346097307,0.0,Charitable organisation managers and directors
+1136,0.062226932967598146,0.0,Human resource managers and directors
+1137,0.17354761097051657,0.0,Information technology directors
+1139,0.12309118374774168,0.0,Functional managers and directors n.e.c.
+1140,0.0956,0.0,"Directors in logistics, warehousing and transport"
+1150,0.1378,0.0,Managers and directors in retail and wholesale
+1161,0.02324829886591061,1.0,Officers in armed forces
+1162,0.025786394858405313,0.0,Senior police officers
+1163,0.06952170902883156,0.0,"Senior officers in fire, ambulance, prison and related services"
+1171,0.0659,0.0,Health services and public health managers and directors
+1172,0.18079999999999993,0.0,Social services managers and directors
+1211,0.0,0.0,Managers and proprietors in agriculture and horticulture
+1212,0.0,0.0,"Managers and proprietors in forestry, fishing and related services"
+1221,0.1215,0.0,Hotel and accommodation managers and proprietors
+1222,0.0,0.0,Restaurant and catering establishment managers and proprietors
+1223,0.12150000000000001,0.0,Publicans and managers of licensed premises
+1224,0.06585642584412667,0.0,Leisure and sports managers
+1225,0.06952170902883156,0.0,Travel agency managers and proprietors
+1231,0.37110731477719594,0.0,Health care practice managers
+1232,0.11342382647957491,0.0,"Residential, day and domiciliary care managers and proprietors"
+1233,0.14454003636154922,0.0,Early education and childcare services proprietors
+1241,0.09581940584262884,0.0,Managers in transport and distribution
+1242,0.0956,0.0,Managers in storage and warehousing
+1243,0.09560000000000002,0.0,Managers in logistics
+1251,0.06952170902883156,0.0,"Property, housing and estate managers"
+1252,0.06952170902883156,0.0,Garage managers and proprietors
+1253,0.06952170902883156,0.0,Hairdressing and beauty salon managers and proprietors
+1254,0.06952170902883156,0.0,Waste disposal and environmental services managers
+1255,0.07150532394943297,0.0,Managers and directors in the creative industries
+1256,0.06892280654767063,0.0,Betting shop and gambling establishment managers
+1257,0.06952170902883156,0.0,Hire services managers and proprietors
+1258,0.06952170902883156,0.0,Directors in consultancy services
+1259,0.07028143489525832,0.0,Managers and proprietors in other services n.e.c.
+2111,0.2571893370406977,0.0,Chemical scientists
+2112,0.07802907113769597,0.0,Biological scientists
+2113,0.10047837339970608,0.0,Biochemists and biomedical scientists
+2114,0.16629655425415102,0.0,Physical scientists
+2115,0.17683351778656123,0.0,Social and humanities scientists
+2119,0.08050457984546452,0.0,Natural and social science professionals n.e.c.
+2121,0.009424514734395293,0.0,Civil engineers
+2122,0.07095921413445642,0.0,Mechanical engineers
+2123,0.05895816352769399,0.0,Electrical engineers
+2124,0.11058649940915483,0.0,Electronics engineers
+2125,0.03694163926435276,0.0,Production and process engineers
+2126,0.07622536432180711,0.0,Aerospace engineers
+2127,0.05880999268827687,0.0,Engineering project managers and project engineers
+2129,0.05880999268827688,0.0,Engineering professionals n.e.c.
+2131,0.3606122872579919,0.0,IT project managers
+2132,0.3606122872579919,0.0,IT managers
+2133,0.2805830815655704,0.0,"IT business analysts, architects and systems designers"
+2134,0.30973779739272633,0.0,Programmers and software development professionals 
+2135,0.356785933187166,0.0,Cyber security professionals
+2136,0.3577103421178984,0.0,IT quality and testing professionals
+2137,0.35762646859801805,0.0,IT network professionals
+2139,0.36132485578500545,0.0,Information technology professionals n.e.c.
+2141,0.3752921025957169,0.0,Web design professionals
+2142,0.3662739348025712,0.0,Graphic and multimedia designers
+2151,0.04245572916666667,0.0,Conservation professionals
+2152,0.04210476831896552,0.0,Environment professionals
+2161,0.04074373917008664,0.0,Research and development (R&D) managers 
+2162,0.0807289454305885,0.0,"Other researchers, unspecified discipline"
+2211,0.03331249108971818,0.0,Generalist medical practitioners
+2212,0.03480427928500675,0.0,Specialist medical practitioners
+2221,0.016860132661568016,0.0,Physiotherapists
+2222,0.009303826963439617,0.0,Occupational therapists
+2223,0.0,0.0,Speech and language therapists
+2224,0.047338655061858435,0.0,Psychotherapists and cognitive behaviour therapists
+2225,0.04764692240190548,0.0,Clinical psychologists
+2226,0.047646922401905475,0.0,Other psychologists
+2229,0.050748208899086315,0.0,Therapy professionals n.e.c.
+2231,0.052,0.0,Midwifery nurses
+2232,0.06168122196771959,0.0,Community nurses
+2233,0.061681221967719586,0.0,Specialist nurses
+2234,0.0616812219677196,0.0,Nurse practitioners
+2235,0.06168122196771959,0.0,Mental health nurses
+2236,0.06168122196771959,0.0,Children's nurses
+2237,0.06168122196771959,0.0,Other nursing professionals 
+2240,0.0926,0.0,Veterinarians
+2251,0.0900061797752809,0.0,Pharmacists
+2252,0.0,0.0,Optometrists
+2253,0.028183391992960844,0.0,Dental practitioners
+2254,0.006450222255707073,0.0,Medical radiographers
+2255,0.0,0.0,Paramedics
+2256,0.009303826963439617,0.0,Podiatrists
+2259,0.015697887792224127,0.0,Other health professionals n.e.c.
+2311,0.22027185436800306,0.0,Higher education teaching professionals
+2312,0.07357835396039604,0.0,Further education teaching professionals
+2313,0.2901,0.0,Secondary education teaching professionals
+2314,0.16295652334103403,0.0,Primary education teaching professionals
+2315,0.16295652334103403,0.0,Nursery education teaching professionals
+2316,0.0930422419939858,0.0,Special needs education teaching professionals
+2317,0.19008687795641352,0.0,Teachers of English as a foreign language
+2319,0.19008687795641352,0.0,Teaching professionals n.e.c.
+2321,0.05672089819182391,0.0,Head teachers and principals
+2322,0.06839952713009526,0.0,Education managers 
+2323,0.2679361808740151,0.0,Education advisers and school inspectors
+2324,0.17123161410627374,0.04524886877828054,Early education and childcare services managers
+2329,0.10144242434042879,0.0,Other educational professionals n.e.c
+2411,0.1673,0.0,Barristers and judges
+2412,0.1673,0.0,Solicitors and lawyers
+2419,0.20152496061315736,0.0,Legal professionals n.e.c.
+2421,0.3287168567323951,0.0,Chartered and certified accountants
+2422,0.43378541409480265,0.0,Finance and investment analysts and advisers
+2423,0.3287168567323951,0.0,Taxation experts
+2431,0.2246280966136498,0.0,Management consultants and business analysts
+2432,0.2623556966288981,0.0,Marketing and commercial managers
+2433,0.33531260528275936,0.0,"Actuaries, economists and statisticians"
+2434,0.21983732653313814,0.0,Business and related research professionals
+2435,0.2394332257457699,0.0,Professional/Chartered company secretaries 
+2439,0.1846,0.0,"Business, research and administrative professionals n.e.c."
+2440,0.22630326032089054,0.0,Business and financial project management professionals
+2451,0.0784,0.0,Architects
+2452,0.08573685868659026,0.0,"Chartered architectural technologists, planning officers and consultants"
+2453,0.05880999268827687,0.0,Quantity surveyors
+2454,0.01924452296819788,0.0,Chartered surveyors
+2455,0.1186,0.0,Construction project managers and related professionals
+2461,0.02084512066067686,0.0,Social workers
+2462,0.02084512066067686,0.0,Probation officers
+2463,0.12316028225806452,0.0,Clergy
+2464,0.02084512066067686,0.0,Youth work professionals
+2469,0.020845120660676855,0.0,Welfare professionals n.e.c.
+2471,0.2032,0.0,Librarians
+2472,0.30190418025765986,0.0,Archivists and curators
+2481,0.0579136327052894,0.0,Quality control and planning engineers
+2482,0.2246280966136498,0.0,Quality assurance and regulatory professionals
+2483,0.04381456131846825,0.0,Environmental health professionals
+2491,0.23514884680006107,0.0,Newspaper and periodical editors
+2492,0.2351488468000611,0.0,Newspaper and periodical journalists and reporters
+2493,0.45300000000000007,0.0,Public relations professionals
+2494,0.6253051589193026,0.0,Advertising accounts managers and creative directors
+3111,0.22903510231157828,0.0,Laboratory technicians
+3112,0.017715225489419038,0.0,Electrical and electronics technicians 
+3113,0.03940892440759711,0.0,Engineering technicians 
+3114,0.039896193371424034,0.0,Building and civil engineering technicians 
+3115,0.022955593368778233,0.0,Quality assurance technicians 
+3116,0.12070000000000002,0.0,"Planning, process and production technicians"
+3119,0.06084003755233845,0.0,"Science, engineering and production technicians n.e.c."
+3120,0.026089578393728007,0.0,"CAD, drawing and architectural technicians"
+3131,0.31060000000000004,0.0,IT operations technicians
+3132,0.4685,0.0,IT user support technicians
+3133,0.3227615689561466,0.0,Database administrators and web content technicians
+3211,0.0,0.0,Dispensing opticians
+3212,0.0735,0.0,Pharmaceutical technicians
+3213,0.006450222255707073,0.0,Medical and dental technicians
+3214,0.07484085022798505,0.0,Complementary health associate professionals
+3219,0.07438592507177741,0.0,Health associate professionals n.e.c.
+3221,0.0,0.0,Youth and community workers
+3222,0.0002619963940306858,0.019531249999999997,Child and early years officers
+3223,0.0,0.0,Housing officers
+3224,0.019998618298821963,0.0,Counsellors
+3229,0.0,0.0,Welfare and housing associate professionals n.e.c.
+3231,0.013414215374371116,1.0,Higher level teaching assistants
+3232,0.013414215374371116,1.0,Early education and childcare practitioners
+3240,0.005887288884269604,0.0,Veterinary nurses
+3311,0.01881167883211679,0.49635036496350365,Non-commissioned officers and other ranks
+3312,0.10575790926752783,0.0,Police officers (sergeant and below)
+3313,0.0,0.0,Fire service officers (watch manager and below)
+3314,0.0038754263851756253,0.0,Prison service officers (below principal officer)
+3319,0.01635494643087974,0.0,Protective service associate professionals n.e.c.
+3411,0.31402657064051487,0.0,Artists
+3412,0.3362800502970125,0.0,"Authors, writers and translators"
+3413,0.09918443040799162,0.0,"Actors, entertainers and presenters"
+3414,0.24146245511176254,0.0,Dancers and choreographers
+3415,0.009471921182266009,0.0,Musicians
+3416,0.13587772425938002,0.0,"Arts officers, producers and directors"
+3417,0.11809518536159404,0.0,"Photographers, audio-visual and broadcasting equipment operators"
+3421,0.024407289770658907,0.0,Interior designers
+3422,0.024407289770658907,0.0,"Clothing, fashion and accessories designers"
+3429,0.024143080962468453,0.0,Design occupations n.e.c.
+3431,0.0,0.0,Sports players
+3432,0.011447954428296945,0.0,"Sports coaches, instructors and officials"
+3433,0.014413987387101394,0.0,Fitness and wellbeing instructors
+3511,0.0,0.0,Aircraft pilots and air traffic controllers
+3512,0.0,0.0,Ship and hovercraft officers
+3520,0.2308936768149883,0.0,Legal associate professionals
+3531,0.42251669193428626,0.0,Brokers
+3532,0.2708887694586553,0.0,Insurance underwriters
+3533,0.3195584283661975,0.0,Financial and accounting technicians
+3534,0.3104,0.0,Financial accounts managers
+3541,0.07949888176835947,0.0,"Estimators, valuers and assessors"
+3542,0.36005526379345953,0.0,Importers and exporters
+3543,0.4383388694578646,0.0,Project support officers
+3544,0.45934926536433296,0.0,Data analysts
+3549,0.45934926536433296,0.0,Business associate professionals n.e.c.
+3551,0.476493546022447,1.0,Buyers and procurement officers
+3552,0.5959089993039919,0.0,Business sales executives
+3553,0.12776606254781456,0.016806722689075633,Merchandisers 
+3554,0.5920974953361501,0.0,Marketing associate professionals
+3555,0.21518492855263974,0.0,Estate agents and auctioneers
+3556,0.2623556966288981,0.0,Sales accounts and business development managers
+3557,0.1023,0.0,Events and exhibition managers and organisers
+3560,0.0,0.0,Public services associate professionals
+3571,0.2619697479199071,0.0,Human resources and industrial relations officers
+3572,0.2619697479199071,0.0,Careers advisers and vocational guidance specialists
+3573,0.27809441726968126,0.0,Information technology trainers
+3574,0.2793,0.0,Other vocational and industrial trainers
+3581,0.0,0.0,Inspectors of standards and regulations
+3582,0.014837966675218249,0.0,Health and safety managers and officers
+4111,0.09914136953809663,0.0,National government administrative occupations
+4112,0.44582139918675,0.0,Local government administrative occupations
+4113,0.44493101367968124,0.0,Officers of non-governmental organisations
+4121,0.19014908308507117,0.0,Credit controllers
+4122,0.2666938124484371,0.0,"Book-keepers, payroll managers and wages clerks"
+4123,0.020775749303925315,0.0,Bank and post office clerks
+4124,0.26266236879033034,0.0,Finance officers
+4129,0.020775749303925315,0.0,Financial administrative occupations n.e.c.
+4131,0.05970000000000001,0.0,Records clerks and assistants
+4132,0.1564618090885574,0.0,Pensions and insurance clerks and assistants
+4133,0.00045588685888621727,0.0,Stock control clerks and assistants
+4134,0.2258,0.0,Transport and distribution clerks and assistants
+4135,0.08524995620072581,0.0,Library clerks and assistants
+4136,0.4046,0.0,Human resources administrative occupations
+4141,0.18559999999999996,0.0,Office managers
+4142,0.18559999999999996,0.0,Office supervisors
+4143,0.18559999999999996,0.0,Customer service managers
+4151,0.2048,0.0,Sales administrators
+4152,0.6707,0.0,Data entry administrators
+4159,0.08045196198849311,0.0,Other administrative occupations n.e.c.
+4211,0.37365712149607244,0.0,Medical secretaries
+4212,0.0,0.0,Legal secretaries
+4213,0.23658080502559328,0.0,School secretaries
+4214,0.3907,0.0,Company secretaries and administrators
+4215,0.23658080502559328,0.0,Personal assistants and other secretaries
+4216,0.4338,0.0,Receptionists
+4217,0.6707,0.0,Typists and related keyboard occupations
+5111,0.0,0.0,Farmers
+5112,0.056514119243355414,0.0,Horticultural trades
+5113,0.056514119243355414,0.0,Gardeners and landscape gardeners
+5114,0.056514119243355414,0.0,Groundsmen and greenkeepers
+5119,0.005581958762886599,0.0,Agricultural and fishing trades n.e.c.
+5211,0.0,0.0,Sheet metal workers
+5212,0.0127374945802983,0.0,"Metal plate workers, smiths, moulders and related occupations"
+5213,0.0,0.0,Welding trades
+5214,0.010831534005492192,0.0,Pipe fitters
+5221,0.0027430930282754157,0.0,Metal machining setters and setter-operators
+5222,0.009981284818941507,0.0,"Tool makers, tool fitters and markers-out"
+5223,0.019235470528631844,0.0,Metal working production and maintenance fitters
+5224,0.04609472001162833,0.0,Precision instrument makers and repairers
+5225,0.029030384650664435,0.0,Air-conditioning and refrigeration installers and repairers
+5231,0.004067108053459585,0.0,"Vehicle technicians, mechanics and electricians"
+5232,0.0020335540267297923,0.0,Vehicle body builders and repairers 
+5233,3.7312917921647564e-05,0.0,Vehicle paint technicians
+5234,0.02888212379697471,0.0,Aircraft maintenance and related trades
+5235,0.019235470528631844,0.0,Boat and ship builders and repairers
+5236,0.020172428656763396,0.0,Rail and rolling stock builders and repairers
+5241,0.0,0.0,Electricians and electrical fitters
+5242,0.0999,0.0,Telecoms and related network installers and repairers
+5243,0.07920079072905123,0.0,"TV, video and audio servicers and repairers"
+5244,0.03849740465888171,0.0,Computer system and equipment installers and servicers
+5245,0.07920079072905123,0.0,Security system installers and repairers
+5246,0.04986716453310633,0.0,Electrical service and maintenance mechanics and repairers
+5249,0.07920079072905123,0.0,Electrical and electronic trades n.e.c.
+5250,0.0005875074002436471,0.0,"Skilled metal, electrical and electronic trades supervisors"
+5311,0.02495509142262524,0.0,Steel erectors
+5312,0.0,0.0,Stonemasons and related trades
+5313,0.0,0.0,Bricklayers 
+5314,0.0157,0.0,"Roofers, roof tilers and slaters"
+5315,0.010831534005492192,0.0,Plumbers & heating and ventilating installers and repairers
+5316,0.0,0.0,Carpenters and joiners
+5317,0.0,0.0,"Glaziers, window fabricators and fitters"
+5319,0.1186,0.0,Construction and building trades n.e.c.
+5321,0.0,0.0,Plasterers
+5322,0.004063529411764707,0.0,Floorers and wall tilers
+5323,0.0,0.0,Painters and decorators
+5330,0.0296,0.0,Construction and building trades supervisors
+5411,0.0,0.0,Upholsterers
+5412,0.0,0.0,Footwear and leather working trades
+5413,0.0342,0.0,Tailors and dressmakers
+5419,0.0,0.0,"Textiles, garments and related trades n.e.c."
+5421,0.14642559764619348,0.0,Pre-press technicians
+5422,0.0,0.0,Printers
+5423,0.0,0.0,Print finishing and binding workers
+5431,0.0,0.0,Butchers
+5432,0.0,0.0,Bakers and flour confectioners
+5433,0.0,0.0,Fishmongers and poultry dressers
+5434,0.042499775768178795,0.0,Chefs
+5435,0.020075165072039512,0.0,Cooks
+5436,0.0,0.0,Catering and bar managers
+5441,0.007657405779868688,0.0,"Glass and ceramics makers, decorators and finishers"
+5442,7.114960003867994e-05,0.0,Furniture makers and other craft woodworkers
+5443,0.0,0.0,Florists
+5449,0.0,0.0,Other skilled trades n.e.c.
+6111,0.013414215374371116,0.9236641221374046,Early education and childcare assistants
+6112,0.013414215374371114,1.0,Teaching assistants
+6113,0.013414215374371116,1.0,Educational support assistants
+6114,0.013414215374371116,0.0,Childminders
+6116,0.013414215374371116,0.0,Nannies and au pairs
+6117,0.013414215374371116,0.0,Playworkers
+6121,0.06050332735196103,0.0,Pest control officers
+6129,0.006123038621532068,0.0,Animal care services occupations n.e.c.
+6131,0.0,0.0,Nursing auxiliaries and assistants
+6132,0.0,0.0,Ambulance staff (excluding paramedics)
+6133,0.0,0.0,Dental nurses
+6134,0.0018799016534913823,0.0,Houseparents and residential wardens
+6135,0.042135980890143955,0.0,Care workers and home carers
+6136,0.03947037184243773,0.0,Senior care workers
+6137,0.0018799016534913821,0.0,Care escorts
+6138,0.0,0.0,"Undertakers, mortuary and crematorium assistants"
+6211,0.014065668744009307,0.0,Sports and leisure assistants
+6212,0.2700014639643317,0.0,Travel agents
+6213,0.0936897799662546,0.0,Air travel assistants
+6214,0.1169,0.0,Rail travel assistants
+6219,0.04240954440865164,0.0,Leisure and travel service occupations n.e.c.
+6221,0.029371265659203002,0.0,Hairdressers and barbers
+6222,0.013559682458511404,0.0,Beauticians and related occupations
+6231,0.0436,0.0,Housekeepers and related occupations
+6232,0.00058681383459661,0.0,Caretakers
+6240,0.0436,0.0,Cleaning and housekeeping managers and supervisors
+6250,0.1215,0.0,Bed and breakfast and guest house owners and proprietors 
+6311,0.10575790926752784,0.0,Police community support officers
+6312,0.025888791118680417,0.0,Parking and civil enforcement occupations
+7111,0.3013223571413147,0.0,Sales and retail assistants
+7112,0.08401450558352137,0.0,Retail cashiers and check-out operators
+7113,0.2852,0.0,Telephone salespersons
+7114,0.18741117857065737,0.0,Pharmacy and optical dispensing assistants
+7115,0.3473515199792331,0.0,Vehicle and parts salespersons and advisers
+7121,0.1758,0.0,Collector salespersons and credit agents
+7122,0.18367086631011798,0.0,"Debt, rent and other cash collectors"
+7123,0.1758,0.0,Roundspersons and van salespersons
+7124,0.1758,0.0,Market and street traders and assistants
+7125,0.0788,0.0,Visual merchandisers and related occupations
+7129,0.09265113390992835,0.0,Sales related occupations n.e.c.
+7131,0.1378,0.0,Shopkeepers and owners - retail and wholesale
+7132,0.2627,0.0,Sales supervisors - retail and wholesale 
+7211,0.6731272409205937,0.0,Call and contact centre occupations
+7212,0.3511631927870591,0.0,Telephonists
+7213,0.34935349997332155,0.0,Communication operators
+7214,0.3851,0.0,Market research interviewers
+7219,0.43271043458813135,0.0,Customer service occupations n.e.c.
+7220,0.18559999999999996,0.0,Customer service supervisors
+8111,0.0,0.0,"Food, drink and tobacco process operatives"
+8112,0.0012420211650331372,0.0,Textile process operatives
+8113,0.0,0.0,Chemical and related process operatives
+8114,0.0,0.0,Plastics process operatives
+8115,0.0,0.0,Metal making and treating process operatives
+8119,0.008094184688186451,0.0,Process operatives n.e.c.
+8120,0.0027430930282754157,0.0,Metal working machine operatives 
+8131,0.0,0.0,Paper and wood machine operatives
+8132,0.0,0.0,Mining and quarry workers and related operatives
+8133,0.0014086316051844469,0.0,Energy plant operatives
+8134,0.0,0.0,Water and sewerage plant operatives
+8135,0.0,0.0,Printing machine assistants
+8139,0.0,0.0,Plant and machine operatives n.e.c.
+8141,0.0005776598880047156,0.0,Assemblers (electrical and electronic products)
+8142,0.0247072625698324,0.0,Assemblers (vehicles and metal goods)
+8143,0.0324,0.0,Routine inspectors and testers
+8144,0.0324,0.0,"Weighers, graders and sorters"
+8145,0.004067108053459585,0.0,"Tyre, exhaust and windscreen fitters"
+8146,0.0,0.0,Sewing machinists
+8149,0.01919359398138406,0.9424083769633508,Assemblers and routine operatives n.e.c.
+8151,0.0,0.0,"Scaffolders, stagers and riggers"
+8152,0.0,0.0,Road construction operatives
+8153,0.0,0.0,Rail construction and maintenance operatives
+8159,0.00013661631197192832,0.0,Construction operatives n.e.c.
+8160,0.008244734911696137,0.03238866396761134,"Production, factory and assembly supervisors"
+8211,0.0,0.0,Large goods vehicle drivers
+8212,0.0,0.0,Bus and coach drivers
+8213,0.0073215581769266284,0.0,Taxi and cab drivers and chauffeurs
+8214,0.00670964008041031,0.0,Delivery drivers and couriers
+8215,0.0662,0.0,Driving instructors
+8219,0.00730933520835079,0.0,Road transport drivers n.e.c.
+8221,0.049759900179837946,0.0,Crane drivers
+8222,0.0,0.0,Fork-lift truck drivers
+8229,0.0,0.0,Mobile machine drivers and operatives n.e.c.
+8231,0.0,0.0,Train and tram drivers
+8232,0.0,0.0,Marine and waterways transport operatives
+8233,0.0,0.0,Air transport operatives
+8234,0.0,0.0,Rail transport operatives
+8239,0.0,0.0,Other drivers and transport operatives n.e.c.
+9111,0.018067279005061845,0.0,Farm workers
+9112,0.0,0.0,Forestry and related workers
+9119,0.0010717779943126453,0.0,Fishing and other elementary agriculture occupations n.e.c.
+9121,0.02457481241677365,0.0,Groundworkers
+9129,0.02457481241677365,0.0,Elementary construction occupations n.e.c.
+9131,0.007790860035207857,0.0,Industrial cleaning process occupations
+9132,0.0,0.0,"Packers, bottlers, canners and fillers"
+9139,0.007790860035207857,0.0,Elementary process plant occupations n.e.c.
+9211,0.0013013639626704952,0.0,"Postal workers, mail sorters and messengers"
+9219,0.06105149989051893,0.0,Elementary administration occupations n.e.c.
+9221,0.0,0.0,Window cleaners
+9222,0.0017210526315789474,0.9605263157894737,Street cleaners
+9223,0.0,0.0,Cleaners and domestics
+9224,0.0,0.0,"Launderers, dry cleaners and pressers"
+9225,0.0,0.0,Refuse and salvage occupations
+9226,0.0,0.0,Vehicle valeters and cleaners
+9229,0.0,0.0,Elementary cleaning occupations n.e.c.
+9231,0.002049244679578925,0.0,Security guards and related occupations
+9232,0.025888791118680414,0.0,School midday and crossing patrol occupations
+9233,0.08045196198849311,0.0,Exam invigilators
+9241,0.0,0.0,Shelf fillers
+9249,0.1708776,0.0,Elementary sales occupations n.e.c.
+9251,0.0,0.0,Elementary storage supervisors
+9252,0.0,0.0,Warehouse operatives
+9253,0.0,0.0,Delivery operatives
+9259,0.0,0.0,Elementary storage occupations n.e.c.
+9261,0.0,0.0,Bar and catering supervisors
+9262,0.0,0.0,Hospital porters
+9263,0.0,0.0,Kitchen and catering assistants
+9264,0.0,0.0,Waiters and waitresses
+9265,0.0,0.0,Bar staff
+9266,0.0008923857868020306,0.0,Coffee shop workers
+9267,0.026128104155002455,0.0,Leisure and theme park attendants
+9269,0.0427748377040266,0.0,Other elementary services occupations n.e.c.
