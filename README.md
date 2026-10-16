@@ -35,4 +35,4 @@ Figures are written to `output/figures/` and tables to `output/tables/`. Only ag
 
 Code: MIT licence. Exposure data: Anthropic, CC-BY 4.0. Labour Force Survey: Office for National Statistics, distributed by the UK Data Service; Crown copyright. The original data creators, depositors or copyright holders, the funders of the data collections and the UK Data Service, and their agents, bear no responsibility for the further analysis or interpretation of the data.
 
-The code was written with assistance from Claude (Anthropic). The author ran all analyses and checked all results.
+
