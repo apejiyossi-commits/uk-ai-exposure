@@ -1,0 +1,11 @@
+check,estimate_pp,se_pp,p,change_%,ci_low_%,ci_high_%,base_rate_%,people,starts_high,starts_zero
+"Main: top 25% vs near-zero, ages 22-25",-0.8859,0.2439,0.0003,-39.6861,-61.1059,-18.2663,2.2322,38486,724,698
+Drop 2021 (COVID reopening),-1.0533,0.3088,0.0006,-47.1852,-74.296,-20.0744,2.2322,29582,517,510
+Proportional (Poisson),,,0.0002,-36.7795,-50.3447,-19.5085,2.2322,38486,724,698
+Comparison: all jobs below median,-0.6033,0.2846,0.034,-27.0252,-52.0153,-2.035,2.2322,38486,724,1288
+Treated: top 10% exposure jobs,-0.6118,0.2103,0.0036,-58.4803,-97.8752,-19.0853,1.0462,38486,339,698
+Excluding occupations with imputed exposure,-0.8857,0.2436,0.0003,-39.727,-61.1447,-18.3094,2.2295,38486,719,696
+First interview only (each person once),-1.2344,0.5508,0.025,-43.2071,-80.9957,-5.4185,2.8568,10165,240,262
+Comparison: ages 26-64 starting high-exposure jobs,,,0.0267,-18.6723,-32.2581,-2.3619,2.2322,38486,724,
+Triple difference vs ages 26-64,,,0.0,-42.6514,-56.0075,-25.2404,2.2322,38486,724,698
+Placebo: ages 26-64,0.0547,0.0365,0.1339,7.2515,-2.2301,16.7331,0.7544,636805,3625,3458
