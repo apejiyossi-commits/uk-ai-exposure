@@ -1,0 +1,9 @@
+postings,specification,comparison,estimate_%,se,p,sectors
+total postings,raw,25th to 75th pct of sector exposure,-19.5173,3.8346,0.0,49
+total postings,net of each sector's pre-2023 cycle sensitivity,25th to 75th pct of sector exposure,-18.334,4.6415,0.0003,49
+total postings,excluding the three IT and software sectors,25th to 75th pct of sector exposure,-17.3896,4.4914,0.0003,46
+total postings,before-period July-December 2022 only,25th to 75th pct of sector exposure,-15.178,2.9245,0.0,49
+total postings,raw,"most exposed third, automation-heavy, vs least exposed third",-19.9061,6.0606,0.0031,25
+total postings,raw,"most exposed third, augmentation-heavy, vs least exposed third",-20.5815,7.7933,0.0143,25
+new postings,raw,25th to 75th pct of sector exposure,-15.3697,3.421,0.0,49
+new postings,net of each sector's pre-2023 cycle sensitivity,25th to 75th pct of sector exposure,-15.5969,4.225,0.0006,49
