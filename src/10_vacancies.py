@@ -211,6 +211,8 @@ ax.axvline(pd.Timestamp("2022-11-30"), color=INK2, lw=1)
 ax.text(pd.Timestamp("2022-12-20"), 0.97, "ChatGPT released\n30 Nov 2022", transform=ax.get_xaxis_transform(),
         va="top", fontsize=8, color=INK2)
 ax.set_xlim(t["month"].min().to_timestamp(), t["month"].max().to_timestamp() + pd.Timedelta(days=330))
+years = range(t["month"].min().year, t["month"].max().year + 1)
+ax.set_xticks([pd.Timestamp(f"{y}-01-01") for y in years], [str(y) for y in years])
 ax.set_ylabel("Job postings, index (2022 average = 100)")
 ax.grid(axis="y", color=GRID, lw=0.8)
 ax.set_axisbelow(True)
