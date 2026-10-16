@@ -5,6 +5,7 @@ work who has been with their employer for less than 3 months (EMPLEN = 1).
 For each destination group (high exposure = top 25% of 2022 employment at
 unit-group level; near-zero = exposure below 0.01), the rate is the weighted
 share of 22-25-year-olds in the labour force who started such a job.
+Outputs: Figure 3 (raw rates), Figure 4 (event study), and tables.
 """
 from pathlib import Path
 
@@ -77,16 +78,25 @@ rates.round(3).to_csv(TAB / "job_entry_22_25_by_half.csv")
 
 x = np.arange(len(halves))
 post_start = halves.index("2023H1")
+ticks = [i for i, h in enumerate(halves) if h.endswith("H1")]
 fig, ax = plt.subplots(figsize=(8, 4.5))
+ends = {}
 for col, color, name in [("high", HIGH, "High exposure"), ("near_zero", LOW, "Near-zero exposure")]:
     ax.plot(x, rates[col], color=color, lw=2, marker="o", ms=5, mec=SURFACE, mew=1.5,
             solid_capstyle="round", label=f"Into {name.lower()} jobs")
-    ax.annotate(name, (x[-1], rates[col].iloc[-1]), xytext=(8, 0), textcoords="offset points",
+    ends[name] = rates[col].iloc[-1]
+gap = 0.2
+if abs(ends["High exposure"] - ends["Near-zero exposure"]) < gap:   # keep end labels apart
+    mid = np.mean(list(ends.values()))
+    hi_on_top = ends["High exposure"] >= ends["Near-zero exposure"]
+    ends["High exposure"] = mid + (gap / 2 if hi_on_top else -gap / 2)
+    ends["Near-zero exposure"] = mid - (gap / 2 if hi_on_top else -gap / 2)
+for name, val in ends.items():
+    ax.annotate(name, (x[-1], val), xytext=(8, 0), textcoords="offset points",
                 va="center", color=INK, fontsize=9)
 ax.axvline(post_start - 0.5, color=INK2, lw=1)
 ax.text(post_start - 0.35, 0.97, "ChatGPT released\n30 Nov 2022", transform=ax.get_xaxis_transform(),
         va="top", fontsize=8, color=INK2)
-ticks = [i for i, h in enumerate(halves) if h.endswith("H1")]
 ax.set_xticks(ticks, [halves[i][:4] for i in ticks])
 ax.set_xlim(-0.5, len(halves) + 1.8)
 ax.set_ylim(bottom=0)
@@ -115,7 +125,7 @@ print(did.round(3).to_string(index=False))
 print("\nUS comparison (Massenkoff and McCrory): job-finding into exposed occupations among 22-25s "
       "fell 14% relative to 2022, barely significant; no fall for workers over 25")
 
-# --- 3. Event study by half-year --------------------------------------------
+# --- 3. Event study by half-year (Figure 4) ---------------------------------
 long = stack(y)
 event_h = [h for h in halves if h != REF]
 for h in event_h:
@@ -125,9 +135,31 @@ es = pf.feols(fml, data=long, weights="pwt24", vcov={"CRV1": "id"})
 coef = pd.DataFrame({"half": event_h,
                      "estimate_pp": [100 * es.coef()[f"d_{h}"] for h in event_h],
                      "se_pp": [100 * es.se()[f"d_{h}"] for h in event_h]})
+coef = pd.concat([coef, pd.DataFrame({"half": [REF], "estimate_pp": [0.0], "se_pp": [0.0]})])
+coef = coef.set_index("half").loc[halves].reset_index()
 coef["ci_low"] = coef["estimate_pp"] - 1.96 * coef["se_pp"]
 coef["ci_high"] = coef["estimate_pp"] + 1.96 * coef["se_pp"]
 coef.round(4).to_csv(TAB / "event_study_job_entry.csv", index=False)
 print(f"\nEvent study, ages 22-25 (high minus near-zero, relative to {REF}, pp):")
 print(coef.round(3).to_string(index=False))
-print(f"\nSaved {FIG / 'fig3_job_entry_young.png'} and tables to {TAB}")
+
+fig, ax = plt.subplots(figsize=(8, 4.5))
+ax.axhline(0, color=INK2, lw=1)
+ax.axvline(post_start - 0.5, color=INK2, lw=1)
+ax.vlines(x, coef["ci_low"], coef["ci_high"], color=HIGH, lw=1.5, alpha=0.5)
+is_ref = (coef["half"] == REF).to_numpy()
+ax.plot(x[~is_ref], coef.loc[~is_ref, "estimate_pp"], "o", color=HIGH, ms=6, mec=SURFACE, mew=1.5)
+ax.plot(x[is_ref], [0], "o", ms=6, mfc=SURFACE, mec=HIGH, mew=1.5)
+ax.text(post_start - 0.35, 0.97, "ChatGPT released\n30 Nov 2022", transform=ax.get_xaxis_transform(),
+        va="top", fontsize=8, color=INK2)
+ax.set_xticks(ticks, [halves[i][:4] for i in ticks])
+ax.set_ylabel(f"High minus near-zero exposure,\nrelative to {REF} (pp)")
+ax.grid(axis="y", color=GRID, lw=0.8)
+ax.set_axisbelow(True)
+ax.set_title("Job-start gap for 22-25s, high vs near-zero exposure, with 95% intervals",
+             loc="left", fontsize=12, color=INK)
+fig.savefig(FIG / "fig4_event_study_job_entry.png", dpi=200, bbox_inches="tight")
+fig.savefig(FIG / "fig4_event_study_job_entry.pdf", bbox_inches="tight")
+plt.close(fig)
+
+print(f"\nSaved figures 3 and 4 to {FIG} and tables to {TAB}")
