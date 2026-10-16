@@ -1,0 +1,9 @@
+outcome,version,estimate_pp,se_pp,p,change_%,people,starts_high,starts_zero
+"unemployment, ages 16-64",main crosswalk,0.05,0.2452,0.8392,1.6446,345024,,
+"unemployment, ages 16-64",alternative crosswalk,0.0095,0.2391,0.9685,0.3095,361051,,
+"job starts, ages 22-25",main crosswalk,-0.8859,0.2439,0.0003,-39.6861,38486,724,698
+"job starts, ages 22-25",alternative crosswalk,-0.9674,0.2303,0.0,-41.7735,38486,722,567
+"job starts, ages 22-25","high exposure, automation-heavy",-0.7921,0.2176,0.0003,-57.9025,38486,381,698
+"job starts, ages 22-25","high exposure, augmentation-heavy",-0.2359,0.2068,0.254,-27.2955,38486,343,698
+"job starts, ages 26-64","high exposure, automation-heavy",0.0913,0.0316,0.0039,23.5307,636805,1944,3458
+"job starts, ages 26-64","high exposure, augmentation-heavy",0.1348,0.0314,0.0,36.7964,636805,1681,3458
