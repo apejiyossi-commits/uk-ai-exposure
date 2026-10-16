@@ -1,0 +1,3 @@
+specification,estimate_pp,se_pp,p,ci_low,ci_high,mde_pp
+with controls,0.05,0.2452,0.8392,-0.4306,0.5305,0.6865
+no controls,0.0128,0.2434,0.9582,-0.4643,0.49,0.6817
