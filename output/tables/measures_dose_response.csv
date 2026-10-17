@@ -1,0 +1,12 @@
+model,measure,estimate_log_points,se,p,change_%_per_sd,units
+one measure,observed,-0.1721,0.0515,0.0008,-15.8087,412
+one measure,gpt_beta,-0.1783,0.0579,0.0021,-16.3289,412
+one measure,gpt_human,-0.1855,0.0613,0.0025,-16.9296,412
+one measure,aioe,-0.2,0.0569,0.0004,-18.1301,412
+one measure,robot,0.1814,0.0508,0.0004,19.8866,412
+observed + GPT-4 rated,observed,-0.1048,0.0647,0.1053,-9.9472,412
+observed + GPT-4 rated,gpt_beta,-0.1078,0.0727,0.1381,-10.2175,412
+observed + AIOE,observed,-0.0849,0.0692,0.2195,-8.143,412
+observed + AIOE,aioe,-0.1394,0.0787,0.0768,-13.008,412
+observed + robot,observed,-0.1155,0.0581,0.0469,-10.9095,412
+observed + robot,robot,0.1256,0.0563,0.0258,13.379,412

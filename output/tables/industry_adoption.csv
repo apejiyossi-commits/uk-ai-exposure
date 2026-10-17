@@ -1,0 +1,4 @@
+starts,estimate_log_points_per_sd,se,p_cluster,p_randomisation,change_%_per_sd,industries
+all job starts,-0.094,0.0668,0.159,0.248,-8.9737,13
+into high-exposure jobs,-0.0022,0.0977,0.982,0.988,-0.2202,13
+into near-zero exposure jobs,0.1074,0.1517,0.479,0.3,11.3361,13

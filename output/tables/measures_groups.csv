@@ -1,0 +1,21 @@
+measure,outcome,estimate,se,p,change_%,starts_high,starts_low
+observed,"unemployment, ages 16-64 (pp)",0.05,0.2452,0.8392,1.6446,,
+observed,"job starts, ages 22-25 (pp)",-0.8936,0.2456,0.0003,-40.033,724,724
+observed,"job starts, ages 26-64 (pp)",0.0538,0.0366,0.1424,7.1254,3625,3546
+observed,"job starts, triple difference 22-25 vs 26-64 (log points)",-0.549,0.1341,0.0,-42.2488,,
+gpt_beta,"unemployment, ages 16-64 (pp)",0.1832,0.2512,0.4691,7.3402,,
+gpt_beta,"job starts, ages 22-25 (pp)",-1.0212,0.2485,0.0,-47.1893,672,826
+gpt_beta,"job starts, ages 26-64 (pp)",-0.0222,0.0366,0.5442,-3.0665,3638,3553
+gpt_beta,"job starts, triple difference 22-25 vs 26-64 (log points)",-0.5148,0.1331,0.0001,-40.2396,,
+gpt_human,"unemployment, ages 16-64 (pp)",0.2374,0.2269,0.3005,9.643,,
+gpt_human,"job starts, ages 22-25 (pp)",-0.8658,0.2401,0.0003,-43.8105,624,804
+gpt_human,"job starts, ages 26-64 (pp)",0.0156,0.037,0.6727,2.0489,3785,3646
+gpt_human,"job starts, triple difference 22-25 vs 26-64 (log points)",-0.5368,0.1356,0.0001,-41.538,,
+aioe,"unemployment, ages 16-64 (pp)",0.3239,0.2255,0.1575,19.5915,,
+aioe,"job starts, ages 22-25 (pp)",-0.4438,0.2308,0.0545,-27.8501,517,751
+aioe,"job starts, ages 26-64 (pp)",0.0433,0.0367,0.2381,6.1471,3601,3675
+aioe,"job starts, triple difference 22-25 vs 26-64 (log points)",-0.3837,0.1428,0.0072,-31.868,,
+robot,"unemployment, ages 16-64 (pp)",-0.3508,0.224,0.1236,-6.9305,,
+robot,"job starts, ages 22-25 (pp)",0.3875,0.2377,0.1031,17.3581,899,438
+robot,"job starts, ages 26-64 (pp)",-0.0216,0.0364,0.5528,-2.7874,3590,3601
+robot,"job starts, triple difference 22-25 vs 26-64 (log points)",0.3071,0.148,0.038,35.9423,,

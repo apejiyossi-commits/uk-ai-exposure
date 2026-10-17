@@ -1,0 +1,11 @@
+hypothesis,type,source,estimate,units,se,p,p_holm,q_bh,bonferroni
+"H1 Unemployment, high vs low exposure, ages 16-64",pp,"robustness_unemployment.csv: Main: top vs bottom 25%, with controls",0.05,estimate_pp,0.2452,0.8392,0.8392,0.8392,1.0
+"H2 Job starts 22-25, high vs near-zero exposure",pp,"robustness_job_entry.csv: Main: top 25% vs near-zero, ages 22-25",-0.8859,estimate_pp,0.2439,0.0003,0.0024,0.00075,0.003
+"H3 Job starts 26-64, high vs near-zero",pp,robustness_job_entry.csv: Placebo: ages 26-64,0.0547,estimate_pp,0.0365,0.1339,0.5356,0.19129,1.0
+"H4 Triple difference, 22-25 vs 26-64",log,robustness_job_entry.csv: Triple difference vs ages 26-64,-42.6514,change_%,,5e-05,0.0005,0.00025,0.0005
+"H5 Graduates in non-graduate jobs, 22-25 vs 26-35",pp,"graduate_underemployment.csv: All employed graduates: 22-25 vs 26-35, non-graduate job",1.7067,estimate_pp,1.2844,0.1839,0.5517,0.22988,1.0
+"H6 Entry from non-employment, 22-25",pp,job_starts_by_channel.csv: entry,-0.9894,estimate_pp,0.3269,0.0025,0.015,0.005,0.025
+"H7 Moves between employers, 22-25",pp,job_starts_by_channel.csv: move,-0.493,estimate_pp,0.269,0.0668,0.334,0.11133,0.668
+"H8 Job starts 22-25, automation-heavy jobs",pp,"variants.csv: high exposure, automation-heavy",-0.7921,estimate_pp,0.2176,0.0003,0.0024,0.00075,0.003
+"H9 Job starts 22-25, augmentation-heavy jobs",pp,"variants.csv: high exposure, augmentation-heavy",-0.2359,estimate_pp,0.2068,0.254,0.5517,0.28222,1.0
+"H10 Online postings, 75th vs 25th pct exposure",%,vacancies_did.csv: raw,-19.5173,estimate_%,3.8346,5e-05,0.0005,0.00025,0.0005

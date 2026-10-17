@@ -1,0 +1,5 @@
+design,se_pp,base_%,mde_pp,mde_%_of_base,estimate_pp,us_sized_effect_pp,power_us_sized,type_s_us_sized,exaggeration_if_significant
+"Job starts 22-25, high vs near-zero",0.2439,2.2322,0.6833,30.6114,-0.8859,-0.3125,0.2493,0.0024,1.9935
+"Job starts 22-25, first interview only",0.5508,2.8568,1.5431,54.0154,-1.2344,-0.4,0.1122,0.0322,3.3584
+"Unemployment, high vs low, 16-64",0.2452,3.0386,0.6869,22.6074,0.05,-0.4254,0.4111,0.0003,1.5456
+"Entry from non-employment, 22-25",0.3269,1.5925,0.9158,57.5095,-0.9894,-0.223,0.1048,0.0393,3.5654

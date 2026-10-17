@@ -1,0 +1,3 @@
+Source: ONS, Artificial intelligence in UK businesses: 2023 to 2026 (20 July 2026), Figures 1 and 3 chart data.
+https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026
+Open Government Licence v3.0. Downloaded 16 October 2026. Line breaks inside the notes cells removed; values unchanged.

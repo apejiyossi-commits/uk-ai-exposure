@@ -1,0 +1,11 @@
+outcome,adjustment,beta_used,estimate_pp,se_pp,p
+"job starts 22-25, high vs near-zero (pp)",main (no cycle adjustment),0.0,-0.8859,0.2439,0.0003
+"job starts 22-25, high vs near-zero (pp)",net of 2011-19 sensitivity,-0.0475,-0.8707,0.244,0.0004
+"job starts 22-25, high vs near-zero (pp)",net of sensitivity + 2 SE,0.0463,-0.9007,0.2439,0.0002
+"job starts 22-25, high vs near-zero (pp)",net of sensitivity - 2 SE,-0.1413,-0.8407,0.244,0.0006
+"job starts 22-25, high vs near-zero (pp)","group x unemployment rate, estimated in 2021-26",0.0,-0.9699,0.272,0.0004
+"unemployment, high vs low (pp)",main (no cycle adjustment),0.0,0.05,0.2452,0.8392
+"unemployment, high vs low (pp)",net of 2011-19 sensitivity,-0.4332,0.187,0.246,0.4504
+"unemployment, high vs low (pp)",net of sensitivity + 2 SE,-0.3473,0.1598,0.2458,0.5183
+"unemployment, high vs low (pp)",net of sensitivity - 2 SE,-0.5191,0.2141,0.2462,0.3881
+"unemployment, high vs low (pp)","group x unemployment rate, estimated in 2021-26",0.0,0.0449,0.2561,0.8614

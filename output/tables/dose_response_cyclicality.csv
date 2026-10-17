@@ -1,0 +1,4 @@
+model,term,estimate_log_points,se,p,units
+observed,observed,-0.1726,0.0515,0.0008,407
+observed + cyclicality,observed,-0.1727,0.0517,0.0008,407
+observed + cyclicality,cyclicality,-0.0085,0.0752,0.91,407

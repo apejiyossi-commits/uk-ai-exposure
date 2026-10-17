@@ -2,3 +2,6 @@
 data/raw/
 __pycache__/
 output/*.txt
+data/raw_hist/
+data/external/hesa/table-28.zip
+data/external/hesa/table-28.csv

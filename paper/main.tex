@@ -1,0 +1,437 @@
+\documentclass[11pt]{article}
+
+% ---------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,threeparttable,tabularx,makecell}
+\usepackage[labelfont=bf,font=small]{caption}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{xurl}
+\usepackage{microtype}
+\usepackage[round,authoryear]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\onehalfspacing
+\setlist{itemsep=2pt,topsep=4pt}
+
+% A number or table whose source result file is not yet in output/tables/
+\newcommand{\pending}[1]{\textcolor{red}{[\detokenize{#1}: pending]}}
+\input{generated/numbers}
+
+% Figures come straight from output/figures/; a missing one shows a placeholder
+\newcommand{\fig}[2][0.92\textwidth]{%
+  \IfFileExists{../output/figures/#2.pdf}{\includegraphics[width=#1]{../output/figures/#2.pdf}}%
+  {\fbox{\parbox{0.8\textwidth}{\centering\vspace{3em}\pending{figure #2}\vspace{3em}}}}}
+\newcommand{\tabin}[1]{\IfFileExists{generated/#1.tex}{\begin{adjustbox}{max width=\textwidth}\input{generated/#1}\end{adjustbox}}{\pending{table #1}}}
+
+\title{Fewer First Jobs? Early Evidence on Generative AI\\ and Young Workers in the United Kingdom}
+\author{Yossi Apeji\thanks{City St George's, University of London. Email: \href{mailto:apejiyossi@gmail.com}{apejiyossi@gmail.com}. Code and all aggregate results: \url{https://github.com/apejiyossi-commits/uk-ai-exposure}. The Labour Force Survey is Crown copyright, distributed by the UK Data Service; the data creators and distributors bear no responsibility for the analysis or interpretation. The AI-use statement is at the end of the paper.}}
+\date{October 2026 \\[0.5em] \small Working paper --- preliminary, comments welcome}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+I study the first four years of generative AI in the UK labour market. Occupations are ranked by observed exposure --- the share of each occupation's tasks that people actually perform with Claude, weighted towards automated uses \citep{massenkoff2026} --- carried from US to UK occupation codes through a four-step crosswalk. In the Labour Force Survey from 2021 to mid-2026, unemployment in the most exposed quarter of occupations has not risen relative to the least exposed ($\unempEst$ percentage points, 95\% interval $\unempCIlo$ to $\unempCIhi$). Hiring of young people is where the change shows. Among 22--25 year olds, the quarterly rate of starting a job in a high-exposure occupation fell by \entryEstAbs{} percentage points relative to starts in occupations with near-zero exposure, \entryPctAbs{} of its 2022 level; workers aged 26--64 show no change. The fall is concentrated in entry from outside employment, in occupations where AI use is mostly automation rather than augmentation, and among UK-born graduates, and much of it is redirection towards unexposed occupations rather than lost jobs. It is unlike anything the same comparison shows at placebo dates in 2013--17, and it survives removing the cyclical sensitivity estimated over that decade. But it appears equally for theoretical and observed measures of exposure, it looks like a one-off step in 2023 rather than a gap that widens as firms adopt AI, it is not larger in industries that adopt more, and it has narrowed in the most recent year. Online job postings tell a similar but weaker story: postings fell about \postRawAbs\% more in exposed sectors after 2022, but the gap had begun to open in mid-2022 and the estimate does not survive allowing for even modest departures from parallel trends. The young-entry estimate survives Holm correction across ten pre-declared hypotheses, but it is sensitive to departures from parallel trends of the size seen during the 2021 reopening, and the design has only about one-in-four power to detect an effect the size of the US estimate, so the point estimate probably overstates the true effect. I set out a dated forecast that the next releases of the survey can confirm or reject.
+
+\medskip
+\noindent\textbf{JEL:} J23, J24, J62, O33. \quad \textbf{Keywords:} generative AI, AI exposure, youth employment, job entry, Labour Force Survey.
+\end{abstract}
+
+\newpage
+% ===========================================================================
+\section{Introduction}\label{sec:intro}
+
+Three years after ChatGPT, the evidence on whether generative AI has changed labour markets is mixed. Economy-wide measures in the United States show little sign of disruption: unemployment and employment have not moved differently in AI-exposed occupations \citep{gimbel2025,massenkoff2026}, and Danish administrative data show essentially no effect on earnings or hours two years in \citep{humlum2025nber}. At the same time, a cluster of studies points to one margin that is moving: the hiring of young and junior workers into exposed jobs. In US payroll data, employment of 22--25 year olds in the most exposed occupations has fallen well behind that of their less-exposed peers, while older workers in the same occupations are unaffected \citep{brynjolfsson2025canaries}; in r\'esum\'e data, junior employment falls in firms that adopt generative AI, through lower hiring rather than more separations \citep{hosseini2025}; and \citet{massenkoff2026} find a smaller, marginally significant fall in the rate at which young workers find jobs in exposed occupations.
+
+This paper asks whether the same pattern appears in the United Kingdom, using the Labour Force Survey (LFS) and the newest measure of exposure, \citet{massenkoff2026}'s \emph{observed exposure}. Most earlier measures rate what AI \emph{could} do in an occupation \citep{felten2021,webb2020,eloundou2024}. Observed exposure instead records what people \emph{do} with an AI system: it takes the occupation's tasks that are both technically feasible for a large language model and actually performed with Claude, weighting automated uses above augmentative ones \citep{handa2025}. Carrying a US occupational measure to the UK is not trivial. I build a four-step crosswalk (US SOC 2018 $\to$ US SOC 2010 $\to$ ISCO-08 $\to$ UK SOC 2010 $\to$ UK SOC 2020), weighted by US employment on the US side and by ONS dual-coding weights on the UK side, and show that the results do not depend on the one step where alternatives exist.
+
+The UK is a useful second case. Its labour market differs from the US in ways that matter for how a shock to junior hiring would show up: graduate recruitment is concentrated in London and in large professional-services employers, the minimum wage is higher relative to typical pay, and the period after 2022 combined a large rise in interest rates with a slow cooling of the labour market. The LFS also records, for each worker, how long they have been with their current employer, so it can separate a fall in hiring from a rise in job loss, and its longitudinal component shows whether new starters came from another job or from outside employment.
+
+I find four things. First, there is no sign that generative AI has raised unemployment in exposed occupations: the difference-in-differences estimate is $\unempEst$ percentage points with a 95\% interval of $\unempCIlo$ to $\unempCIhi$, and the 95\% interval excludes increases of more than about half a percentage point. Second, the hiring of young people into exposed jobs has fallen. From 2023 the quarterly rate at which 22--25 year olds start jobs in the top quarter of exposure fell by \entryEstAbs{} percentage points relative to their rate of starting jobs with near-zero exposure, a fall of \entryPctAbs{} against 2022 (95\% interval $\entryPctLo$ to $\entryPctHi$). Workers aged 26--64 show no such change ($\entryOld$ points). The result holds without the pandemic-recovery year 2021, without the two years of lowest LFS response, using only each person's first interview, with a proportional (Poisson) model, and with an alternative crosswalk.
+
+Third, the pattern looks like what a task-based model of junior hiring predicts. The fall is concentrated in entry from unemployment or inactivity ($\chanYoungEntry$ points, \chanYoungEntryP) rather than in moves between employers; in occupations where Claude use is mostly automation ($\autoYoung$) rather than augmentation ($\augYoung$, not significant); and among graduates. Relative to older workers, young people's starts into unexposed occupations rose by between \redirZeroAbs{} and \redirZeroUKAbs{} depending on the sample, while their starts into exposed occupations fell by up to \redirHighAbs, so much of the change is redirection of young workers towards other jobs rather than a loss of jobs. It is not explained by migration or by students taking part-time work. Nor is it a feature of the comparison in ordinary times: with false treatment dates in each half-year from 2013 to 2017, the same estimate ranges from $\plMin$ to $\plMax$, against $\plActual$ at the real date, and removing the cyclical sensitivity estimated over 2011--19 leaves it essentially unchanged ($\cycEntry$ points).
+
+Fourth, the evidence is weaker than the headline numbers suggest, and I report how. The young-entry result rests on about \entryStartsHigh{} job starts into high-exposure occupations over five and a half years. It survives a Holm correction across the paper's ten pre-declared hypotheses (adjusted $p=\holmTwo$), but the design has only about \powerUS{} power to detect an effect the size of the US estimate (a 14\% fall), and conditional on reaching significance it would overstate such an effect about \exaggUS-fold \citep{gelman2014}. The event study shows the gap narrowing in the most recent half-year ($\esLast$ points in \esLastHalf{}). The young-entry estimate is also sensitive to departures from parallel trends: because the 2021 reopening produced large swings in the pre-period, the robust interval of \citet{rambachan2023} includes zero once post-2022 trend changes are allowed to be a tenth of the largest pre-2023 change. And the features that would tie the change specifically to AI use are missing: theoretical exposure from \citet{eloundou2024} predicts the fall as well as observed use does, the gap does not widen as business adoption of AI rises, and it is not larger in the industries that adopt most. Online job postings from Indeed fell about \postRawAbs\% more in exposed sectors after 2022, and the best-fitting single break in that gap is \breakLevel{}; but the gap started to open in early 2022, roughly \postShareBefore{} of the fall since January 2022 happened before ChatGPT's release, and the robust interval of \citet{rambachan2023} includes zero once post-2022 trend breaks are allowed to be just \bdPost{} times the largest pre-2023 break.
+
+The paper contributes in three ways. It provides some of the first UK evidence using observed rather than theoretical exposure, and a reusable, documented crosswalk from US to UK occupation codes. It adds to the evidence that early effects of generative AI run through the hiring of young workers rather than through unemployment \citep{brynjolfsson2025canaries,hosseini2025,teeselink2025}, using a survey that can distinguish entry from job-to-job moves and that covers the whole labour market rather than one payroll provider or online platform. And it tries to be explicit about what an early, small-sample analysis can and cannot show: alongside the estimates it reports multiple-testing corrections, power and exaggeration ratios, sensitivity to violations of parallel trends, placebo treatment dates in the pre-AI decade, and a dated forecast, so that later data can confirm or overturn the findings.
+
+Section~\ref{sec:lit} reviews related work and Section~\ref{sec:model} sets out a simple framework and its predictions. Section~\ref{sec:data} describes the data and the crosswalk, and Section~\ref{sec:method} the empirical design. Section~\ref{sec:results} presents the results, Section~\ref{sec:threats} the main threats to their interpretation, and Section~\ref{sec:mech} evidence on mechanisms. Section~\ref{sec:discussion} discusses what the results mean and Section~\ref{sec:conclusion} concludes.
+
+% ===========================================================================
+\section{Related literature}\label{sec:lit}
+
+\paragraph{Measuring exposure.} The task-based approach to technology and work \citep{autor2003,acemoglu2011,acemoglu2018,acemoglu2019} motivates measuring an occupation's exposure by the share of its tasks a technology can perform. Before large language models, \citet{webb2020} matched patent text to task descriptions and \citet{felten2021} linked progress in AI applications to the abilities each occupation uses (AIOE); \citet{felten2023} adapted AIOE to language modelling. \citet{eloundou2024} asked human annotators and GPT-4 whether an LLM could cut the time needed for each O*NET task by at least half; their measure has become the standard \emph{theoretical} exposure. International studies apply similar measures across countries \citep{gmyrek2023}, and for the UK \citet{dfe2023}, \citet{jung2024} and \citet{henseke2025} map exposure across occupations and regions, finding it highest in professional, clerical and financial jobs and in London. All of these measure what AI could do. \citet{handa2025} instead classify millions of Claude conversations by the O*NET task they serve, and \citet{massenkoff2026} combine this usage with theoretical feasibility into \emph{observed exposure}, which I use here. Observed and theoretical exposure are correlated (0.68 across UK occupations here) but differ in instructive ways: many occupations that an LLM could in principle help with show no use at all.
+
+\paragraph{Early labour market evidence.} Studies of the first years after ChatGPT find little effect on aggregate employment or earnings. \citet{humlum2025nber} link Danish surveys of chatbot adoption to administrative records and find precise zeros for earnings and hours; \citet{gimbel2025} find that the occupational mix of US employment has changed only slightly faster than in earlier periods, and that the change predates generative AI. Effects have been found in narrower settings: freelance writing and translation jobs on online platforms fell after ChatGPT's release \citep{hui2024,demirci2025}, and establishments exposed to earlier, pre-LLM AI reduced hiring for non-AI positions \citep{aahr2022}. \citet{hampole2025} find lower labour demand for AI-exposed tasks within firms but offsetting productivity gains. The closest work to this paper studies young and junior workers. \citet{brynjolfsson2025canaries} use payroll records from ADP and find that employment of 22--25 year olds in the most exposed occupations is now about 19\% below where it would have been had it kept pace with less exposed occupations, with no comparable change for older workers, a gap that runs through hiring and is concentrated where AI substitutes for labour. \citet{hosseini2025} find that junior employment falls in firms that adopt generative AI, mainly through fewer hires. \citet{massenkoff2026} find a 14\% fall in young workers' job-finding rate into exposed occupations, barely significant, and no change in unemployment. For the UK, \citet{teeselink2025} finds that firms highly exposed to AI cut junior employment and posted fewer vacancies, \citet{henseke2025} find a modest fall in postings for highly exposed roles, and \citet{egan2026} finds that online vacancies in the most exposed fifth of occupations fell by almost 40\% from mid-2022 but cautions that exposed occupations are also more cyclical. \citet{delriochanona2025} review this fast-moving literature.
+
+\paragraph{Productivity and who benefits.} Experimental and field studies find that generative AI raises productivity on writing, coding and customer-support tasks, with the largest gains for less experienced workers \citep{noy2023,peng2023,dellacqua2023,brynjolfsson2025qje}. That finding sits uneasily with evidence that young workers' hiring falls: if AI helps novices most, firms might hire more of them. The framework in Section~\ref{sec:model} reconciles the two through the tasks juniors are hired to do. Adoption itself is spreading fast \citep{bick2024} but unevenly across workers and firms \citep{humlum2025pnas,appel2025}; UK business adoption rose from about 12\% of firms with ten or more employees in late 2023 to 35\% in mid-2026 \citep{ons2026ai}.
+
+\paragraph{Young workers, cycles and technology.} Entry-level workers bear a disproportionate share of labour market adjustment. Entering the labour market in a downturn has lasting costs \citep{kahn2010,oreopoulos2012,schwandt2019}, and recessions are when firms accelerate technological change and raise hiring standards \citep{hershbein2018,modestino2020,jaimovich2020}. That literature is the main alternative explanation for this paper's findings: the UK's interest rate rise after 2022 cooled hiring, and occupations that are exposed to AI may also be the ones that cut junior hiring first in any slowdown. Section~\ref{sec:threats} tests this directly using the pre-AI decade.
+
+% ===========================================================================
+\section{A simple framework}\label{sec:model}
+
+The predictions I take to the data come from a stylised version of the task-based model, extended to distinguish junior from experienced workers.
+
+\paragraph{Setup.} In occupation $o$, output requires a continuum of tasks. Experienced workers do judgement-intensive tasks that rely on tacit, firm-specific knowledge. Junior workers do \emph{entry tasks} --- drafting, summarising, coding to a specification, data processing --- and in doing them acquire the knowledge that later makes them experienced. A firm hires a junior if
+\begin{equation}\label{eq:hire}
+  \underbrace{p\,a_o\,(1-s_o)}_{\text{output on entry tasks}} \; + \; \underbrace{\beta\,V_o(s_o)}_{\text{value of training}} \;\geq\; w_J,
+\end{equation}
+where $a_o$ is junior productivity on entry tasks, $s_o \in [0,1]$ is the share of entry tasks AI performs more cheaply than a junior, $V_o$ is the value of a trained worker in the future, and $w_J$ is the junior wage, which is bounded below by the minimum wage and by norms. AI affects hiring through two channels. It \emph{displaces} juniors from the entry tasks it performs ($s_o$ rises), and it can lower the value of training if experienced workers can supervise AI output instead of junior output ($V_o' < 0$). Where AI \emph{augments} rather than automates --- where a person still does the task, faster --- $s_o$ moves little and junior productivity $a_o$ may even rise, as the productivity experiments find. For experienced workers in the same occupation, AI mostly complements their tasks, and dismissing them is costly.
+
+\paragraph{Predictions.} This structure delivers five predictions.
+\begin{enumerate}[label=\textbf{P\arabic*.}]
+  \item \emph{Hiring before unemployment.} Adjustment runs through inflows. Firms stop or slow junior hiring rather than dismiss incumbents, so job entry into exposed occupations falls before, and by more than, unemployment in those occupations rises.
+  \item \emph{Young workers, not older ones.} The fall is concentrated among entrants. Experienced workers in the same occupations see little change, or gains.
+  \item \emph{Automation, not augmentation.} The fall is larger where AI use is automation ($s_o$ high) than where it is augmentation.
+  \item \emph{Redirection.} Young people who would have entered exposed occupations search elsewhere, so their entry into unexposed occupations rises and total youth employment falls by less than entry into exposed occupations.
+  \item \emph{Dose and timing.} Effects scale with actual use more than with theoretical capability, grow as adoption spreads, and begin after capable systems became widely available at the end of 2022 rather than before.
+\end{enumerate}
+
+\paragraph{Alternative explanations.} Three other stories could produce a fall in young people's hiring into exposed occupations after 2022, and each makes a different prediction. (i) \emph{The business cycle.} If exposed occupations are simply more cyclical for young workers, the same pattern should appear whenever unemployment rises, including before AI, and its size should track the cycle. (ii) \emph{Post-pandemic normalisation.} If 2021--22 was an unusual hiring boom in professional and digital occupations, the gap should open during 2022 and fade, and pre-period estimates should trend. (iii) \emph{Measurement.} The LFS response rate fell sharply in 2023--24 and the survey was reweighted; if non-response is related to occupation and age, estimates could move for reasons unrelated to labour demand. Sections~\ref{sec:results} and~\ref{sec:threats} confront each prediction and each alternative.
+
+% ===========================================================================
+\section{Data}\label{sec:data}
+
+\subsection{Observed exposure and the crosswalk}
+
+Observed exposure is published for 756 US occupations (SOC 2018) as part of the Anthropic Economic Index \citep{aei2026}. For each occupation it is the share of tasks, weighted by their importance, that are both rated feasible for an LLM by \citet{eloundou2024} and observed in Claude usage, with automated uses weighted more heavily than augmentative ones \citep{massenkoff2026}. About 30\% of US workers are in occupations with zero measured exposure.
+
+I carry exposure to UK SOC 2020 unit groups in four steps (Appendix~\ref{app:crosswalk} gives details). The two US steps (SOC 2018 to SOC 2010, then SOC 2010 to ISCO-08) use the Bureau of Labor Statistics crosswalks and split each source occupation's US employment (Occupational Employment and Wage Statistics, May 2025) across its matches. The two UK steps use ONS concordances: ISCO-08 to UK SOC 2010, then UK SOC 2010 to SOC 2020, the latter weighted by the number of dual-coded LFS respondents in each pair. Where an ISCO-08 code needed on the UK side receives no US value (six codes), I impute it from the employment-weighted mean of its three-, two- or one-digit ISCO group; 14 of 412 UK unit groups use any imputed value, and excluding them changes nothing. The UK step from ISCO-08 to SOC 2010 is the least certain, and I repeat everything with the ONS proportional conversion as an alternative.
+
+Figure~\ref{fig:measures} compares observed exposure with theoretical exposure from \citet{eloundou2024}, carried through the same crosswalk. The two are correlated (Pearson \corGPT, Spearman \corGPTrank), but there are large gaps: legal secretaries and speech and language therapists have substantial theoretical exposure and no observed use, while call-centre and data-entry occupations top both measures. I also carry over the pre-LLM AIOE measure of \citet{felten2021} (correlation with observed exposure \corAIOE) and a measure of exposure to robots from the Anthropic Economic Index, which serves as a placebo.
+
+\begin{figure}[t]
+\centering
+\fig[0.8\textwidth]{figA3_observed_vs_gpt}
+\caption{Observed and theoretical exposure across UK occupations}\label{fig:measures}
+\begin{minipage}{0.92\textwidth}\footnotesize
+\emph{Notes:} Each point is a UK SOC 2020 unit group. Observed exposure from \citet{massenkoff2026}; theoretical exposure is the GPT-4-rated $\beta$ measure of \citet{eloundou2024}. Both are carried from US SOC 2018 to UK SOC 2020 through the same crosswalk. The dashed line is a linear fit.
+\end{minipage}
+\end{figure}
+
+\subsection{Labour Force Survey}
+
+The LFS is the UK's main household labour market survey. I use the 22 quarterly End User Licence files from January--March 2021 to April--June 2026 \citep{lfs2026}, which are coded to SOC 2020 throughout. I keep people aged 16--64 who are employed or ILO unemployed, about 700,000 person-quarter observations. The main job is coded at SOC 2020 unit-group level (four digits), but the last job of an unemployed person only at minor-group level (three digits), so unemployment comparisons are made between minor groups and job-entry comparisons, which concern the employed, between unit groups. A minor group's exposure is the 2022-employment-weighted mean of its unit groups.
+
+A \emph{job start} is an employed person who has been with their current employer for less than three months. Because each respondent is interviewed in five consecutive quarters, the quarterly start rate is close to a monthly hiring rate times three. I express starts as a share of all economically active people in the age group, so that a fall in starts into one kind of job cannot be offset mechanically by a rise in another. The two-quarter longitudinal files, which link the same people across adjacent quarters, separate starts that follow unemployment or inactivity (\emph{entry}) from starts by people who were already employed (\emph{moves}).
+
+Table~\ref{tab:groups} describes the comparison groups. The top quarter of employment by exposure and the near-zero group each hold about a quarter of 2022 employment. Workers in exposed occupations are more likely to hold a degree (53\% against 18\%), to work in London, and to earn more; they are slightly younger on average but less likely to be under 25.
+
+\begin{table}[t]
+\centering
+\caption{Who works in exposed and unexposed occupations, 2022}\label{tab:groups}
+\small
+\tabin{tab_groups}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} LFS, 2022, employed people aged 16--64, weighted. Minor groups: SOC 2020 three-digit groups split at the 25th and 75th percentiles of 2022 employment by exposure. Unit groups: four-digit groups in the top quarter of employment by exposure, and groups with exposure below 0.01.
+\end{minipage}
+\end{table}
+
+\subsection{Other data}
+
+\emph{Online job postings.} Indeed Hiring Lab publishes daily UK postings indices for 49 occupational sectors \citep{indeed2026}. I map each sector by hand to the UK unit groups its example job titles describe and give it their mean exposure. Postings cover all seniority levels, so they measure overall demand rather than entry-level demand. \emph{Business adoption of AI.} The ONS Business Insights and Conditions Survey reports the share of firms using at least one AI technology, by industry for mid-2026 and over time since late 2023 \citep{ons2026ai}. \emph{The pre-AI decade.} For tests of cyclicality and placebo dates I use the 36 quarterly LFS files from 2011 to 2019, coded to SOC 2010, with exposure carried to SOC 2010 by the same crosswalk. \emph{Automation and augmentation.} From the Economic Index task data \citep{handa2025}, I compute for each occupation the share of Claude use on its tasks that is automation (directive or feedback-loop interactions) rather than augmentation (task iteration, validation or learning), and carry it to the UK the same way.
+
+% ===========================================================================
+\section{Empirical strategy}\label{sec:method}
+
+\paragraph{Unemployment.} Following \citet{massenkoff2026}, I compare unemployment in the top and bottom quarters of exposure, before and after the start of 2023:
+\begin{equation}\label{eq:unemp}
+  u_{igt} = \beta\, \mathrm{High}_g \times \mathrm{Post}_t + X_{it}'\gamma + \alpha_g + \delta_t + \varepsilon_{igt},
+\end{equation}
+where $u_{igt}$ indicates that person $i$, whose current or last job is in minor group $g$, is unemployed in quarter $t$; $\alpha_g$ and $\delta_t$ are minor-group and quarter effects; $X_{it}$ contains age, its square and sex. Standard errors are clustered by minor group, and I also report a permutation test that reassigns exposure groups across minor groups.
+
+\paragraph{Job entry.} For job starts I use a stacked comparison. Each person aged 22--25 appears twice, once for each destination $d \in \{\text{high}, \text{near-zero}\}$, with outcome $s_{idt}=1$ if they started a job in that kind of occupation in quarter $t$:
+\begin{equation}\label{eq:entry}
+  s_{idt} = \beta\, \mathrm{High}_d \times \mathrm{Post}_t + \alpha_d + \delta_t + \varepsilon_{idt}.
+\end{equation}
+$\beta$ is the change from 2023 in the gap between the rates of starting high-exposure and near-zero-exposure jobs, in percentage points of the age group. Comparing two destinations for the same people removes anything that changes the overall hiring of young people, such as the cycle or the number of graduates. Standard errors are clustered by person. I report $\beta$ as a percentage of the 2022 rate of starting high-exposure jobs. To compare young and older workers I estimate a triple difference with destination-by-quarter, age-by-destination and age-by-quarter effects, by Poisson so that the comparison is proportional, since older workers' start rates are much lower.
+
+\paragraph{Event studies and dose-response.} Event-study versions replace $\mathrm{Post}_t$ with indicators for each quarter (unemployment) or half-year (job entry), relative to the last period before ChatGPT. A dose-response design drops the binary groups: I count young and older job starts into each unit group and half-year, and estimate by Poisson how the young-to-old ratio changes after 2022 with standardised exposure, absorbing unit-group-by-half-year effects so that anything affecting all ages in an occupation is removed. This design also allows a horse race between observed and theoretical exposure.
+
+\paragraph{Inference.} The young-entry design rests on a few hundred job starts per group, so I pay attention to inference. I pre-declare ten primary hypotheses and report Holm and Benjamini--Hochberg adjustments \citep{holm1979,benjamini1995}; compute minimum detectable effects and the power, sign-error rate and exaggeration ratio implied for an effect the size of the US estimate \citep{gelman2014}; bound the effect under violations of parallel trends \citep{rambachan2023}; and use randomisation inference where the number of clusters is small \citep{young2019}.
+
+% ===========================================================================
+\section{Results}\label{sec:results}
+
+\subsection{Unemployment has not risen in exposed occupations}
+
+Figure~\ref{fig:unemp} shows unemployment rates in the top and bottom quarters of exposure and the event-study estimates. Unemployment is lower in exposed occupations throughout; both rates fell during 2021--22 and have drifted up since 2023, by similar amounts. The gap does not change after 2022. The difference-in-differences estimate is $\unempEst$ percentage points (95\% interval $\unempCIlo$ to $\unempCIhi$; Table~\ref{tab:main}, panel A), against a pre-2023 unemployment rate of \unempBase\% in exposed occupations. The permutation $p$-value is \unempPerm. The estimate is close to zero with a continuous exposure measure, a median split, the top decile, without 2021, without 2023--24, and without groups with imputed exposure. This replicates the US finding of \citet{massenkoff2026}. The minimum detectable effect is about \unempMDE{} points, so the design can reliably detect a rise of about a quarter or more in exposed occupations' unemployment, but not small ones.
+
+\begin{figure}[t]
+\centering
+\fig[0.49\textwidth]{fig1_unemployment_rates}\hfill\fig[0.49\textwidth]{fig2_event_study_unemployment}
+\caption{Unemployment in exposed and unexposed occupations}\label{fig:unemp}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\emph{Notes:} Left: weighted unemployment rates, ages 16--64, for minor groups in the top and bottom quarters of 2022 employment by observed exposure; unemployed people are placed by their last job. Right: event-study coefficients from equation~\eqref{eq:unemp} with quarter indicators, relative to 2022Q4, with 95\% intervals clustered by minor group.
+\end{minipage}
+\end{figure}
+
+\subsection{Young people's hiring into exposed jobs has fallen}
+
+Figure~\ref{fig:entry} turns to job starts. In 2021--22, 22--25 year olds started high-exposure jobs at a slightly higher rate than near-zero-exposure jobs. From 2023 the order reverses: starts into high-exposure jobs fell, and starts into near-zero jobs rose. The pooled estimate is $\entryEst$ percentage points (standard error \entrySE), $\entryPct$ of the 2022 rate of \entryBase\% per quarter (Table~\ref{tab:main}, panel B). The event study shows no clear pre-trend, although the 2021H2 coefficient is negative and imprecise ($\esTwentyOneH$), and post-2022 coefficients average $\esPostMean$ points. The most recent half-year is smaller ($\esLast$) and not significant on its own.
+
+\begin{figure}[t]
+\centering
+\fig[0.49\textwidth]{fig3_job_entry_young}\hfill\fig[0.49\textwidth]{fig4_event_study_job_entry}
+\caption{Job starts by 22--25 year olds into high- and near-zero-exposure occupations}\label{fig:entry}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\emph{Notes:} Left: quarterly job starts (with the current employer for under three months) as a percentage of economically active 22--25 year olds, by half-year. Right: event-study coefficients from equation~\eqref{eq:entry} with half-year indicators, relative to 2022H2, with 95\% intervals clustered by person.
+\end{minipage}
+\end{figure}
+
+The estimate is stable across specifications (Table~\ref{tab:main} and Figure~\ref{fig:robust}). Dropping 2021, the first year of reopening, makes it larger ($\entryDropTwentyOne$). Dropping 2023--24, when LFS response was lowest, makes it smaller but still significant ($\entryDropLowResp$). Using only each person's first interview, so that no one is counted twice, gives $\entryFirstInt$ with a wider interval. A proportional Poisson version gives $\entryPoisson$; the top decile of exposure gives $\entryTopTen$; comparing with all occupations below the median rather than near-zero ones gives $\entryBelowMedian$. For 18--29 year olds the estimate is $\entryWide$ points. For workers aged 26--64 the same comparison is $\entryOld$ points (\entryOldP), and the triple difference between young and older workers is $\entryTriple$ (95\% interval $\entryTripleLo$ to $\entryTripleHi$).
+
+\begin{table}[p]
+\centering
+\caption{Unemployment and young people's job starts: main estimates and robustness}\label{tab:main}
+\footnotesize
+\tabin{tab_main}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} Panel A: equation~\eqref{eq:unemp}, high- vs low-exposure minor groups, after vs before 2023, controls for age, age squared and sex; standard errors clustered by minor group. Panel B: equation~\eqref{eq:entry}, starts into high- vs near-zero-exposure unit groups; standard errors clustered by person. ``Change vs 2022'' expresses the estimate as a percentage of the pre-period (panel A) or 2022 (panel B) rate in the high-exposure group. Rows without an estimate are Poisson models, reported as percentage changes.
+\end{minipage}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\fig[0.85\textwidth]{fig5_robustness}
+\caption{Robustness of the young job-entry estimate}\label{fig:robust}
+\begin{minipage}{0.92\textwidth}\footnotesize
+\emph{Notes:} Estimates and 95\% intervals for the specifications in Table~\ref{tab:main}, panel B, as a percentage of the 2022 rate.
+\end{minipage}
+\end{figure}
+
+\subsection{Who is affected, and how}\label{sec:who}
+
+Table~\ref{tab:who} and Figure~\ref{fig:age} look inside the young-entry result. Three findings stand out.
+
+\emph{Redirection rather than exclusion.} Relative to older workers starting the same kind of job, young people's starts into near-zero-exposure jobs rose by \redirZeroAbs{} over 2021--26, \redirZeroTwoAbs{} from 2022, and \redirZeroUKAbs{} among UK-born young people not in full-time education. Their starts into high-exposure jobs fell by \redirHighAbs{} over 2021--26, though by less, and not significantly, from 2022 ($\redirHighTwo$, \redirHighTwoP). Much of the young-entry result is therefore young people moving towards unexposed jobs, consistent with prediction P4, rather than young people being shut out of work.
+
+\emph{Not migration or students.} The fall is larger among UK-born young people ($\grpUKborn$ points) than among those born abroad ($\grpAbroad$, not significant), and among those not in full-time education ($\grpNotStudent$) than among students ($\grpStudents$). Among UK-born young people not in education it is $\grpUKNotStudent$. It is largest among graduates ($\grpGrad$, \grpGradP) and smaller among non-graduates ($\grpNonGrad$, \grpNonGradP), consistent with exposed jobs being graduate jobs. Graduates aged 22--25 were not significantly more likely than graduates aged 26--35 to be working in non-graduate occupations after 2022 ($\gradUnder$ points, \gradUnderP).
+
+\emph{Entry from outside work.} In the two-quarter longitudinal files, the fall is concentrated in starts by young people who were unemployed or inactive in the previous quarter ($\chanYoungEntry$ points, \chanYoungEntryP), with a smaller fall in moves from another employer ($\chanYoungMove$, \chanYoungMoveP). For workers aged 26--64 neither channel changes. This is prediction P1: the adjustment is in who gets hired, not who loses their job.
+
+\begin{figure}[t]
+\centering
+\fig[0.8\textwidth]{fig6_starts_by_age}
+\caption{Job starts by age and destination, indexed to 2022}\label{fig:age}
+\begin{minipage}{0.92\textwidth}\footnotesize
+\emph{Notes:} Quarterly job starts as a share of the economically active population in each age group, by destination, indexed to 2022 = 100.
+\end{minipage}
+\end{figure}
+
+\begin{table}[p]
+\centering
+\caption{Who drives the change in young people's job starts}\label{tab:who}
+\footnotesize
+\tabin{tab_who}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} Panel A: equation~\eqref{eq:entry} for subgroups of 22--25 year olds; graduate status is only recorded from 2022, so those rows start in 2022. Panel B: Poisson comparison of 22--25 with 26--64 year olds starting the same kind of job, as a percentage change. Panel C: two-quarter longitudinal files; ``entry'' is a start by someone unemployed or inactive in the previous quarter, ``move'' a start by someone employed in both quarters with a new employer.
+\end{minipage}
+\end{table}
+
+\subsection{Automation and augmentation}
+
+Prediction P3 is that the fall should be larger where AI substitutes for junior work. I split high-exposure occupations at the employment-weighted median share of Claude use that is automation. Young people's starts into automation-heavy exposed jobs fell by \autoYoungAbs{} relative to near-zero jobs; starts into augmentation-heavy exposed jobs fell by \augYoungAbs, not significantly (\augYoungP). For older workers, starts into both kinds rose relative to near-zero jobs ($\autoOld$ and $\augOld$). The contrast echoes \citet{brynjolfsson2025canaries}, who find young workers' employment declines concentrated where AI automates rather than augments.
+
+\subsection{Other exposure measures and a placebo}
+
+If the result reflects AI rather than some other feature of the occupations involved, it should appear for measures of LLM exposure and not for exposure to robots, and, if prediction P5 holds, it should be strongest for the measure of actual use. Table~\ref{tab:measures} repeats the main comparisons with groups built the same way for every measure --- top against bottom quarter of 2022 employment --- and Figure~\ref{fig:dose} shows the dose-response event studies.
+
+Three results stand out. First, every measure of LLM exposure gives a similar answer. Young people's starts into the top quarter fell by \mqObsYoungAbs{} for observed use, \mqGPTYoungAbs{} for GPT-4-rated exposure and \mqGPThYoungAbs{} for human-rated exposure, with triple differences of about $-40$\% in each case and no change for older workers. The pre-LLM AIOE measure gives a smaller fall ($\mqAIOEYoung$, \mqAIOEYoungP). Second, the placebo does not show the fall. Young people's starts into robot-exposed occupations, which are mostly manual jobs with little LLM exposure (correlation with observed use \corRobot), rose rather than fell ($\mqRobotYoung$; triple difference $\mqRobotTriple$), consistent with the redirection in Section~\ref{sec:who}. Third, the data cannot tell observed use from theoretical capability. In the dose-response design, one standard deviation of exposure is associated with a fall in young relative to older starts of \drObsAbs{} for observed use and \drGPTAbs{} for GPT-4-rated exposure; entered together, each is about $-10$\% and neither is significant on its own (\hrObsP{} and \hrGPTP). Prediction P5's claim that actual use should matter more than capability is therefore not supported --- the two measures are too highly correlated, and the number of job starts too small, to separate them.
+
+The dose-response event studies (Figure~\ref{fig:dose}) add a caution about timing. For GPT-4-rated exposure the coefficients drop sharply in 2023H1 and stay negative. For observed use the pre-2023 coefficients are positive relative to 2022H2 (mean $\deObsPre$ log points per standard deviation), post-2023 coefficients average $\deObsPost$, and the last two half-years are back near zero ($\deObsLast$). Part of the observed-use contrast therefore reflects a dip that began in the second half of 2022, and the relative decline has faded in the most recent year. With the alternative crosswalk, the young-entry estimate is $\altEntry$ points ($\altEntryPct$) and the unemployment estimate $\altUnemp$.
+
+\begin{table}[t]
+\centering
+\caption{Results by exposure measure}\label{tab:measures}
+\footnotesize
+\tabin{tab_measures}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} For each measure, high and low groups are the top and bottom quarters of 2022 employment (unit groups for job starts, minor groups for unemployment). Unemployment: equation~\eqref{eq:unemp}, pp. Starts: equation~\eqref{eq:entry}, as a percentage of the 2022 high-group rate. Triple difference: Poisson, 22--25 vs 26--64. $^{*}$, $^{**}$, $^{***}$: $p<0.1$, 0.05, 0.01.
+\end{minipage}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\fig[0.95\textwidth]{fig8_dose_response_by_measure}
+\caption{Dose-response: young relative to older job starts, by exposure measure}\label{fig:dose}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\emph{Notes:} Poisson coefficients on standardised exposure $\times$ young $\times$ half-year indicators, relative to 2022H2, with unit-group-by-age, age-by-half-year and unit-group-by-half-year effects; 95\% intervals clustered by unit group.
+\end{minipage}
+\end{figure}
+
+\subsection{Online job postings}
+
+Online postings give a second, independent and higher-frequency view, at the cost of covering all seniority levels and only 49 broad sectors. Figure~\ref{fig:postings} shows postings by sector exposure, and Table~\ref{tab:postings} the estimates. Moving from the 25th to the 75th percentile of sector exposure is associated with a fall in total postings of about \postRawAbs\% from 2023 (standard error \postRawSE), $\postCyc$\% after removing each sector's pre-2023 sensitivity to the overall postings cycle, and $\postNoIT$\% without the three IT and software sectors. New postings show a similar fall ($\postNew$\%). Unlike job entry, the postings gap does not differ between automation-heavy and augmentation-heavy sectors ($\postAuto$\% and $\postAug$\%).
+
+\begin{figure}[t]
+\centering
+\fig[0.49\textwidth]{fig7_postings_by_exposure}\hfill\fig[0.49\textwidth]{fig9_postings_timing}
+\caption{Online job postings by sector exposure}\label{fig:postings}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\emph{Notes:} Indeed Hiring Lab UK postings indices for 49 occupational sectors. Left: total postings by tercile of sector exposure, 2022 = 100. Right: monthly coefficients on sector exposure (scaled from the 25th to the 75th percentile) relative to November 2022, with sector and month effects; the dashed line removes each sector's pre-2023 sensitivity to aggregate postings. Vertical lines mark model releases.
+\end{minipage}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\caption{Online job postings and sector exposure}\label{tab:postings}
+\footnotesize
+\tabin{tab_postings}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} Monthly panel of 49 sectors, January 2021 to the latest month; 100 $\times$ log postings index on sector exposure $\times$ post-2022, sector and month effects, standard errors clustered by sector. Estimates scaled to the 25th--75th percentile range of sector exposure unless the comparison says otherwise.
+\end{minipage}
+\end{table}
+
+The timing is less clean than the pooled estimate suggests (Figure~\ref{fig:postings}, right). Relative to November 2022, the exposed-sector gap was $\postJanTwentyTwo$ log points in January 2022 and about $\postLastSix$ in the last six months, so roughly \postShareBefore{} of the fall since January 2022 happened before ChatGPT's release. A search over break dates finds that a single level shift fits best in \breakLevel{} (\breakLevelCyc{} net of the cycle), with breaks between October 2022 and February 2023 fitting almost as well; but a gradual slope change fits best from \breakSlope{}. Entering slope changes at five model releases together, the exposed-sector trend steepened sharply after ChatGPT ($\slopeChatGPT$\% a year) and flattened again after GPT-4 ($\slopeGPTfour$\%), with no further changes after later releases. The postings evidence is therefore consistent with a step down around the turn of 2023, but it sits on top of a decline that began during 2022.
+
+% ===========================================================================
+\section{Threats to interpretation}\label{sec:threats}
+
+\subsection{Pre-trends and the honest-DiD bounds}
+
+Conventional event studies test for pre-trends with low power and can mislead \citep{roth2022}. Following \citet{rambachan2023}, I ask how large a post-2022 departure from parallel trends would have to be, relative to departures seen before 2023, for the average post-2022 effect to be consistent with zero (Table~\ref{tab:honest}, Figure~\ref{fig:honest}). The answer is uncomfortable for both the postings and the job-entry results.
+
+For postings, the robust interval includes zero once post-2022 changes in the gap are allowed to be \bdPost{} of the largest pre-2023 change, because the gap fell sharply between 2022H1 and 2022H2. For young job entry, the average post-2022 event-study coefficient is $\hdEntryEst$ points (95\% interval $\hdEntryOrigLo$ to $\hdEntryOrigHi$). If the gap's pre-2023 trend is assumed to continue linearly (smoothness with $M=0$), the robust interval is $\hdEntrySDLo$ to $\hdEntrySDHi$ and still excludes zero. But under relative magnitudes it includes zero from $\bar M=\bdEntry$ ($\hdEntryRMLo$ to $\hdEntryRMHi$); at $\bar M=\hdEntryPrev$ it still excludes zero. The reason is that the job-entry pre-period is itself noisy: the 2021H2 coefficient implies a change of \esMaxPreJump{} points between consecutive half-years before 2023, so even a tenth of that, allowed to accumulate over seven post-2022 half-years, can account for the average effect. The young--old triple difference behaves the same way (breakdown $\bar M=\bdTriple$). These bounds are conservative --- the pre-2023 swing occurred during the 2021 reopening, which the placebo dates and the drop-2021 check suggest was unusual --- but they mean the parallel-trends assumption is doing real work, and the result should not be read as robust to arbitrary departures from it.
+
+\begin{table}[t]
+\centering
+\caption{Sensitivity to violations of parallel trends}\label{tab:honest}
+\footnotesize
+\tabin{tab_honest}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} Robust 95\% intervals for the average of the post-2022 event-study coefficients \citep{rambachan2023}. Relative magnitudes: after 2022, the change in the gap between consecutive periods is at most $\bar M$ times the largest such change before 2023. Smoothness: the slope of the gap can change by at most $M$ per period, in units of the standard error of the average effect.
+\end{minipage}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\fig[0.95\textwidth]{figA4_honest_did}
+\caption{Robust intervals for the average post-2022 effect}\label{fig:honest}
+\end{figure}
+
+\subsection{The business cycle}
+
+The most serious alternative is that young people's hiring into exposed occupations is unusually sensitive to the cycle, and the post-2022 slowdown would have produced the same pattern without AI. National unemployment (ages 16--64) rose from about 3.9\% in 2022 to about 4.9\% by 2026, so this matters. I address it with the pre-AI decade. Using the 2011--19 LFS, coded to SOC 2010, I build the same groups and estimate how the young high-versus-near-zero start gap moved with national unemployment, which fell from over 8\% to under 4\% over those years.
+
+The young start gap shows no reliable cyclical sensitivity: a percentage-point rise in national unemployment is associated with a change of $\betaYoung$ points in the gap (standard error \betaYoungSE), and adding a linear trend reverses the sign ($\betaYoungTrend$), because the decade's falling unemployment is almost collinear with trends. Removing the cyclical component predicted by the 2011--19 estimate leaves the headline estimate essentially unchanged at $\cycEntry$ points, and it ranges from $\cycEntryLo$ to $\cycEntryHi$ across the uncertainty in the sensitivity (Table~\ref{tab:cycle}). Letting each group respond to national unemployment within 2021--26 gives $\cycEntryInSample$. In the dose-response design, adding each occupation's 2011--19 employment cyclicality, interacted with young and post-2022, leaves the coefficient on observed exposure at $\doseCycObs$ per standard deviation, and the cyclicality term is close to zero (\doseCycTermP). Unemployment in exposed occupations was, if anything, \emph{less} cyclical than in unexposed ones ($\betaUnemp$ points per point of national unemployment), so removing the cycle moves the unemployment estimate slightly up, to $\cycUnemp$, still far from significant.
+
+Second, I run the same comparison with a false treatment date in each half-year from 2013 to 2017, using two years before and after, and compare it with the real date using the same window (Figure~\ref{fig:placebo}). The ten placebo estimates for young job entry range from $\plMin$ to $\plMax$ of the pre-period rate; the real one is $\plActual$, and none of the placebos comes close to it. The fall in young people's hiring into exposed occupations after 2022 is therefore unlike anything this comparison produced in the 2010s, a period that included both a recovery and a long expansion. The same exercise is a warning about the unemployment comparison: its placebo estimates are often large and positive (up to $\plUnempMax$ points, significant at 5\% for \plUnempSig{} of the ten dates), so the unemployment design is noisy even in ordinary times, which reinforces reading its post-2022 null as weak evidence either way.
+
+\begin{table}[t]
+\centering
+\caption{Estimates net of the business cycle}\label{tab:cycle}
+\footnotesize
+\tabin{tab_cycle}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} The 2011--19 sensitivity is the change in each gap per percentage point of national unemployment, with quarter-of-year effects and Newey--West standard errors. The predicted cyclical gap, relative to the 2022 unemployment rate, is removed from the high-exposure group's outcome before re-estimating. The last row instead estimates a group $\times$ unemployment-rate term in 2021--26 data.
+\end{minipage}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\fig[0.85\textwidth]{fig10_placebo_dates}
+\caption{Placebo treatment dates in the pre-AI decade}\label{fig:placebo}
+\begin{minipage}{0.92\textwidth}\footnotesize
+\emph{Notes:} Young (22--25) job starts into high- vs near-zero-exposure jobs, as a percentage of the pre-period rate, with a false treatment date in each half-year from 2013 to 2017 (2011--19 LFS, SOC 2010) and the actual date, each using two years either side.
+\end{minipage}
+\end{figure}
+
+\subsection{Measurement}
+
+LFS response fell sharply over the 2010s and again after the pandemic, to under a fifth of sampled households in 2023, and ONS reweighted the survey in 2024. If response fell more among young people in particular occupations, the estimates could reflect who answers rather than who is hired. Three checks address this. Excluding 2023--24, when response was lowest, reduces the estimate but leaves it significant. Using only first interviews, which avoids differential attrition across waves, gives a larger estimate. And the comparison is within age group and between destinations, so changes in the age composition of respondents cancel out. Changes in SOC 2020 coding practice could also move people between occupations; I find the same results with an alternative crosswalk and when dropping occupations with imputed exposure.
+
+\subsection{Multiple testing and power}
+
+The paper tests many hypotheses, and young-entry estimates rest on a few hundred job starts per group. Table~\ref{tab:mtest} reports the ten primary hypotheses with Holm and Benjamini--Hochberg adjustments. Young job entry (adjusted $p=\holmTwo$), the triple difference ($\holmFour$), entry from outside work ($\holmSix$), automation-heavy jobs ($\holmEight$) and online postings ($\holmTen$) survive the Holm correction; moves between employers, graduate underemployment, augmentation-heavy jobs, older workers and unemployment do not, as expected.
+
+Survival of a correction is not the same as precision. Table~\ref{tab:power} shows that the young-entry design has a minimum detectable effect of \mdeEntry{} points, \mdeEntryPct{} of the 2022 rate. Against a true effect the size of the US estimate (a 14\% fall), its power is about \powerUS, and an estimate that reached significance would overstate that effect about \exaggUS-fold. The $\entryPct$ point estimate is therefore best read as evidence that there has been a fall, not as a measure of its size; a true fall nearer the US estimate is entirely consistent with these data.
+
+\begin{table}[t]
+\centering
+\caption{Primary hypotheses with multiple-testing adjustments}\label{tab:mtest}
+\footnotesize
+\tabin{tab_mtest}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} The ten hypotheses were declared before the adjustment was run. Holm controls the family-wise error rate; Benjamini--Hochberg ($q$) the false discovery rate. $p$-values below 0.00005 are set to 0.00005.
+\end{minipage}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Power and design analysis}\label{tab:power}
+\footnotesize
+\tabin{tab_power}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} MDE: minimum detectable effect at 80\% power with a two-sided 5\% test. ``US-sized'' is a 14\% fall in the high-exposure group's rate \citep{massenkoff2026}. Exaggeration: expected ratio of a significant estimate to the true effect, if the true effect is US-sized \citep{gelman2014}.
+\end{minipage}
+\end{table}
+
+% ===========================================================================
+\section{Mechanisms}\label{sec:mech}
+
+Table~\ref{tab:mech} collects four further pieces of evidence. None of them is decisive, and several are underpowered, but together they say something about what the fall in young people's hiring is and is not.
+
+\paragraph{Pay and who gets hired.} If firms in exposed occupations hired fewer juniors because the work could be done otherwise, those still hired might be paid less or be stronger candidates. Hourly pay of young new starters in high-exposure jobs moved by $\wageYoungNew$ relative to near-zero jobs after 2022 (\wageYoungNewP), and pay of all young employees in those jobs by $\wageYoungAll$; neither is significant, and the LFS asks about pay only in the first and fifth interviews, so these comparisons rest on a few hundred young starters. Composition shifted in the direction redirection implies: the share of young starters into near-zero jobs who hold a degree rose from \compZeroDegPre{} to \compZeroDegPost, while the share among starters into high-exposure jobs stayed near \compHighDegPost; the UK-born share of young starters into high-exposure jobs fell from \compHighUKPre{} to \compHighUKPost.
+
+\paragraph{A year later.} The five-quarter panels follow people for a year. Among 22--25 year olds who were not employed when first interviewed, the share working in a high-exposure job a year later fell by \persEntryAbs{} points relative to the share in a near-zero job (\persEntryP), in line with the cross-sectional result; but there are only \persN{} such people across 17 panels, and the analysis of whether new jobs last ($\persSurvive$ points, \persSurviveP) has fewer still. The panels cannot tell us whether redirected young workers later move into exposed occupations.
+
+\paragraph{Industry adoption and timing.} If AI adoption drives the change, young people's hiring should have fallen more in industries where more firms use AI, and the gap should have grown as adoption spread. Neither holds. Across the 13 industries covered by the ONS survey, a standard deviation of 2026 adoption is associated with a change in young relative to older job starts of $\indAll$ (randomisation \indAllP), and with no difference for starts into high-exposure jobs. Over time, national business adoption of AI rose from 12\% to 35\% of firms, and on its own it predicts the young start gap ($\timAdopt$ points per 10 points of adoption, \timAdoptP); but once a one-off level shift from 2023 is allowed, the shift is $\timLevel$ points and the additional trend is positive ($\timGrowth$ points a year, \timGrowthP). The change looks like a step down at the start of 2023 rather than a gap that widens with adoption, and the most recent half-years suggest it has narrowed. That is hard to square with the simplest version of prediction P5.
+
+\paragraph{Graduate outcomes by subject.} HESA's Graduate Outcomes survey reports what graduates are doing 15 months after finishing. Across \goSubjects{} subject groups and seven cohorts (2017/18 to 2023/24), the post-ChatGPT change in the share of first-degree graduates who are unemployed is unrelated to the AI exposure of the occupations each subject feeds ($\goUnemp$ points from the 25th to the 75th percentile, \goUnempP). Some individual subjects stand out --- unemployment among computing graduates rose from \goCompPre{} for the 2020/21 cohort to \goCompPost{} for 2023/24 --- but the cross-subject comparison shows no systematic pattern, with only two or three post-ChatGPT cohorts observed.
+
+\begin{table}[t]
+\centering
+\caption{Mechanisms}\label{tab:mech}
+\footnotesize
+\tabin{tab_mech}
+\begin{minipage}{0.95\textwidth}\footnotesize\vspace{0.5em}
+\emph{Notes:} Panel A: log hourly pay (waves 1 and 5, income weights), high- vs near-zero-exposure jobs, after vs before 2023. Panel B: five-quarter longitudinal files, people aged 22--25 in wave 1. Panel C: young vs older job starts by SIC section and half-year, Poisson with section-by-half-year effects, per standard deviation of 2026 BICS adoption; $p$-values from 999 random reassignments of adoption across sections. Panel D: HESA Graduate Outcomes, CAH level-1 subjects.
+\end{minipage}
+\end{table}
+
+% ===========================================================================
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{What the evidence supports.} Taken together, the UK evidence fits the narrow version of the AI-and-jobs story better than either extreme. There is no sign of displacement of incumbents: unemployment in exposed occupations has not risen, and older workers' hiring into exposed occupations, if anything, rose. There is a fall in the hiring of young people into exposed jobs, concentrated where AI automates tasks, running through entry from outside work, and partly offset by more young people starting jobs elsewhere. The fall is not a cyclical artefact of the comparison: nothing like it appears at placebo dates in the 2010s, and removing the cyclical sensitivity estimated then does not change it. These are the patterns predictions P1--P4 describe, and they match US findings from payroll and r\'esum\'e data \citep{brynjolfsson2025canaries,hosseini2025}.
+
+\paragraph{What it does not yet support.} Three things are not established. The first is size and robustness: the design is underpowered for effects of the plausible size, the point estimate likely exaggerates, and the estimate does not survive departures from parallel trends a tenth as large as the swings seen during the 2021 reopening. The second is that AI \emph{use} is the cause. Prediction P5 fails on every test this paper can run: theoretical exposure, which records what an LLM could do rather than what people use it for, predicts the fall as well as observed use; the gap opened as a step at the start of 2023 rather than widening as the share of firms using AI tripled; and it is no larger in industries that adopt more. Those facts are consistent with an anticipatory or capability-driven response by employers --- cutting junior intake in occupations where generative AI was expected to substitute for entry tasks, before measured adoption caught up --- but they are also consistent with a shock specific to graduate hiring into professional and clerical occupations in 2023--24 that happened to coincide with ChatGPT. The third is persistence: the gap has narrowed in the most recent half-year, and the online postings gap began to open before ChatGPT. And the redirection result means that, even if AI is the cause, the welfare cost depends on what the jobs young people moved into are like --- their pay, training content and prospects --- which this paper only begins to measure.
+
+\paragraph{Policy.} If junior hiring into exposed occupations is the margin that moves first, conventional indicators such as unemployment by occupation will miss early effects. Monitoring hiring flows by age and occupation --- which the LFS already allows --- would give earlier warning. The concentration among graduates suggests that the career-entry role of graduate schemes in professional services deserves attention: if firms hire fewer juniors because AI does entry tasks, the training those tasks provided may also be lost, with consequences for the supply of experienced workers later \citep{acemoglu2025}.
+
+\paragraph{A forecast.} To make the findings testable, I have committed to the repository a dated forecast (\texttt{output/forecast.md}) for the next two half-years of LFS data. If the post-2022 shift persists, the young high-versus-near-zero start gap should average about $\esPostMean$ points relative to 2022H2 in 2026H2 and 2027H1; an average above half that would count as evidence that the gap has faded. A faster, monthly check uses online postings: persistence predicts that the exposed-sector postings gap stays below $-5$ log points through March 2027.
+
+% ===========================================================================
+\section{Conclusion}\label{sec:conclusion}
+
+Four years into the generative AI era, the UK labour market shows no rise in unemployment in the occupations where AI is used most, but a fall in the rate at which young people are hired into those occupations, offset in part by more young people starting jobs elsewhere. The fall is unusual by the standards of the previous decade and is not explained by the cycle, and its shape --- hiring rather than job loss, young rather than older workers, automation rather than augmentation --- is what one would expect if AI first substitutes for the entry tasks that junior workers are hired to do. But it does not scale with measured AI use or adoption, it rests on small numbers of job starts, and it has narrowed recently, so it should be read as an early signal rather than a settled estimate. The next two years of data will be more informative than the last four, and the forecast in this paper says what they should show if the signal is real.
+
+\paragraph{Data and code availability.} All code is at \url{https://github.com/apejiyossi-commits/uk-ai-exposure} under an MIT licence. Observed exposure, task classifications and robot exposure are from the Anthropic Economic Index (CC BY 4.0); postings from Indeed Hiring Lab (CC BY 4.0); business AI adoption from ONS (Open Government Licence). The LFS End User Licence files are available from the UK Data Service and are not redistributed; only aggregate, non-disclosive estimates are committed, and no table reports a cell based on fewer than ten respondents.
+
+\paragraph{Use of AI tools.} I used Claude (Anthropic) as a research assistant for writing and debugging the analysis code, checking references, and drafting and editing text. All design choices, estimates and interpretations were checked by me, and I am responsible for any errors. The exposure measure used here was produced by Anthropic, the developer of Claude; I have no affiliation with Anthropic.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+% ===========================================================================
+\appendix
+\section{The crosswalk from US to UK occupations}\label{app:crosswalk}
+
+\begin{enumerate}
+  \item \emph{US SOC 2018 $\to$ US SOC 2010.} BLS crosswalk. Each 2018 code's US employment (OEWS May 2025) is split equally across its 2010 matches; a 2010 code's exposure is the employment-weighted mean of what it receives. Where OEWS publishes only a combined code, the group's remaining employment is split equally among the detailed codes without their own figure.
+  \item \emph{US SOC 2010 $\to$ ISCO-08.} BLS crosswalk, the same procedure.
+  \item \emph{ISCO-08 $\to$ UK SOC 2010.} ONS concordance. Each UK code takes the mean exposure of its ISCO codes, equally weighted (most UK codes map to one ISCO code). Alternative: the ONS proportional conversion, which weights each pair by its share of job titles.
+  \item \emph{UK SOC 2010 $\to$ SOC 2020.} ONS relationship tables. Each SOC 2020 unit group takes the weighted mean exposure of its SOC 2010 sources, weighted by the number of dual-coded LFS respondents (men plus women; census counts where there is no LFS sample).
+\end{enumerate}
+ISCO-08 codes that the UK side needs but no US value reaches are imputed from the employment-weighted mean of their three-digit group (or two- or one-digit if necessary) and flagged; the share of each UK value that is imputed is carried through. The code is \texttt{src/02\_crosswalk.py}, with a reusable version for any US occupation measure in \texttt{src/xwalk.py}; running observed exposure through \texttt{src/xwalk.py} reproduces the main crosswalk to machine precision.
+
+\end{document}

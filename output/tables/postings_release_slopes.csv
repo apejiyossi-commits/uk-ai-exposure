@@ -1,0 +1,13 @@
+outcome,slope_change_after,pct_per_year,se,p
+ly,Trend from Jan 2021,-1.4592,3.0268,0.6319
+ly,ChatGPT,-48.7226,11.3368,0.0001
+ly,GPT-4,47.2422,10.203,0.0
+ly,Claude 3.5 Sonnet,7.5626,7.9273,0.3449
+ly,o1 (reasoning),-6.2685,9.9514,0.5317
+ly,"Claude 3.7 Sonnet, Claude Code",3.4826,7.2434,0.6328
+ly_cyc,Trend from Jan 2021,-2.7817,2.2802,0.2285
+ly_cyc,ChatGPT,-43.9308,9.0039,0.0
+ly_cyc,GPT-4,44.5655,8.6064,0.0
+ly_cyc,Claude 3.5 Sonnet,8.0161,7.7985,0.3091
+ly_cyc,o1 (reasoning),-6.9656,9.6705,0.4748
+ly_cyc,"Claude 3.7 Sonnet, Claude Code",3.3144,7.3456,0.6539

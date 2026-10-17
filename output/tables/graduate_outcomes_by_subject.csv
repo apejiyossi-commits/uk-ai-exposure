@@ -1,0 +1,155 @@
+Subject area of degree,Academic year,graduates,unemployed,ft_employed,unemployed_%,ft_employed_%,exposure,post
+01 Medicine and dentistry,2017/18,5320,35,4190,0.658,78.759,0.031,0
+01 Medicine and dentistry,2018/19,5175,70,3965,1.353,76.618,0.031,0
+01 Medicine and dentistry,2019/20,5135,45,4090,0.876,79.649,0.031,0
+01 Medicine and dentistry,2020/21,4630,35,3535,0.756,76.35,0.031,0
+01 Medicine and dentistry,2021/22,5005,50,3650,0.999,72.927,0.031,1
+01 Medicine and dentistry,2022/23,4850,60,3460,1.237,71.34,0.031,1
+01 Medicine and dentistry,2023/24,5240,55,3710,1.05,70.802,0.031,1
+02 Subjects allied to medicine,2017/18,25895,675,17165,2.607,66.287,0.047,0
+02 Subjects allied to medicine,2018/19,26745,875,17750,3.272,66.368,0.047,0
+02 Subjects allied to medicine,2019/20,28180,855,18940,3.034,67.211,0.047,0
+02 Subjects allied to medicine,2020/21,26750,810,17435,3.028,65.178,0.047,0
+02 Subjects allied to medicine,2021/22,28015,935,17680,3.337,63.109,0.047,1
+02 Subjects allied to medicine,2022/23,27415,1065,16640,3.885,60.697,0.047,1
+02 Subjects allied to medicine,2023/24,29220,1360,17580,4.654,60.164,0.047,1
+03 Biological and sport sciences,2017/18,16085,975,7200,6.062,44.762,0.064,0
+03 Biological and sport sciences,2018/19,16415,1335,6850,8.133,41.73,0.064,0
+03 Biological and sport sciences,2019/20,13910,825,6135,5.931,44.105,0.064,0
+03 Biological and sport sciences,2020/21,13390,760,6390,5.676,47.722,0.064,0
+03 Biological and sport sciences,2021/22,12820,815,5905,6.357,46.061,0.064,1
+03 Biological and sport sciences,2022/23,12100,850,5215,7.025,43.099,0.064,1
+03 Biological and sport sciences,2023/24,11740,890,4855,7.581,41.354,0.064,1
+04 Psychology,2017/18,9970,660,4575,6.62,45.888,0.032,0
+04 Psychology,2018/19,10085,885,4370,8.775,43.332,0.032,0
+04 Psychology,2019/20,9675,625,4280,6.46,44.238,0.032,0
+04 Psychology,2020/21,10010,590,4845,5.894,48.402,0.032,0
+04 Psychology,2021/22,9940,690,4735,6.942,47.636,0.032,1
+04 Psychology,2022/23,9865,700,4470,7.096,45.312,0.032,1
+04 Psychology,2023/24,9375,785,4120,8.373,43.947,0.032,1
+05 Veterinary sciences,2017/18,865,10,705,1.156,81.503,0.093,0
+05 Veterinary sciences,2018/19,1010,30,820,2.97,81.188,0.093,0
+05 Veterinary sciences,2019/20,1005,15,830,1.493,82.587,0.093,0
+05 Veterinary sciences,2020/21,900,15,750,1.667,83.333,0.093,0
+05 Veterinary sciences,2021/22,985,25,815,2.538,82.741,0.093,1
+05 Veterinary sciences,2022/23,955,15,765,1.571,80.105,0.093,1
+05 Veterinary sciences,2023/24,930,25,720,2.688,77.419,0.093,1
+"06 Agriculture, food and related studies",2017/18,2800,140,1580,5.0,56.429,0.026,0
+"06 Agriculture, food and related studies",2018/19,2630,200,1400,7.605,53.232,0.026,0
+"06 Agriculture, food and related studies",2019/20,2415,135,1300,5.59,53.83,0.026,0
+"06 Agriculture, food and related studies",2020/21,2540,110,1450,4.331,57.087,0.026,0
+"06 Agriculture, food and related studies",2021/22,2375,115,1320,4.842,55.579,0.026,1
+"06 Agriculture, food and related studies",2022/23,2305,125,1280,5.423,55.531,0.026,1
+"06 Agriculture, food and related studies",2023/24,2070,120,1065,5.797,51.449,0.026,1
+07 Physical sciences,2017/18,7015,380,3480,5.417,49.608,0.175,0
+07 Physical sciences,2018/19,7115,610,3260,8.573,45.819,0.175,0
+07 Physical sciences,2019/20,7280,515,3510,7.074,48.214,0.175,0
+07 Physical sciences,2020/21,7010,420,3600,5.991,51.355,0.175,0
+07 Physical sciences,2021/22,6665,465,3340,6.977,50.113,0.175,1
+07 Physical sciences,2022/23,5770,450,2735,7.799,47.4,0.175,1
+07 Physical sciences,2023/24,5695,470,2630,8.253,46.181,0.175,1
+09 Mathematical sciences,2017/18,5015,345,2840,6.879,56.63,0.325,0
+09 Mathematical sciences,2018/19,4945,415,2620,8.392,52.983,0.325,0
+09 Mathematical sciences,2019/20,5175,400,2705,7.729,52.271,0.325,0
+09 Mathematical sciences,2020/21,4950,320,2845,6.465,57.475,0.325,0
+09 Mathematical sciences,2021/22,4270,325,2410,7.611,56.44,0.325,1
+09 Mathematical sciences,2022/23,3560,300,1865,8.427,52.388,0.325,1
+09 Mathematical sciences,2023/24,3440,295,1765,8.576,51.308,0.325,1
+10 Engineering and technology,2017/18,15830,1045,9680,6.601,61.15,0.062,0
+10 Engineering and technology,2018/19,15915,1495,9090,9.394,57.116,0.062,0
+10 Engineering and technology,2019/20,16020,1220,9325,7.615,58.208,0.062,0
+10 Engineering and technology,2020/21,15135,905,9945,5.98,65.709,0.062,0
+10 Engineering and technology,2021/22,14395,880,9410,6.113,65.37,0.062,1
+10 Engineering and technology,2022/23,13160,860,8325,6.535,63.26,0.062,1
+10 Engineering and technology,2023/24,12320,970,7605,7.873,61.729,0.062,1
+11 Computing,2017/18,10900,795,6810,7.294,62.477,0.323,0
+11 Computing,2018/19,11740,1150,6835,9.796,58.22,0.323,0
+11 Computing,2019/20,11990,1090,6970,9.091,58.132,0.323,0
+11 Computing,2020/21,12245,955,7620,7.799,62.229,0.323,0
+11 Computing,2021/22,12110,1070,7185,8.836,59.331,0.323,1
+11 Computing,2022/23,11395,1175,6255,10.312,54.892,0.323,1
+11 Computing,2023/24,11585,1305,5950,11.265,51.36,0.323,1
+"13 Architecture, building and planning",2017/18,4170,200,2640,4.796,63.309,0.061,0
+"13 Architecture, building and planning",2018/19,4170,305,2355,7.314,56.475,0.061,0
+"13 Architecture, building and planning",2019/20,4185,245,2470,5.854,59.02,0.061,0
+"13 Architecture, building and planning",2020/21,4150,185,2735,4.458,65.904,0.061,0
+"13 Architecture, building and planning",2021/22,3990,220,2535,5.514,63.534,0.061,1
+"13 Architecture, building and planning",2022/23,3760,240,2235,6.383,59.441,0.061,1
+"13 Architecture, building and planning",2023/24,3600,240,2110,6.667,58.611,0.061,1
+15 Social sciences,2017/18,22275,1355,12235,6.083,54.927,0.119,0
+15 Social sciences,2018/19,23745,2125,11725,8.949,49.379,0.119,0
+15 Social sciences,2019/20,25305,1780,12790,7.034,50.543,0.119,0
+15 Social sciences,2020/21,25270,1495,13990,5.916,55.362,0.119,0
+15 Social sciences,2021/22,23990,1575,13115,6.565,54.669,0.119,1
+15 Social sciences,2022/23,23655,1655,12695,6.996,53.667,0.119,1
+15 Social sciences,2023/24,22735,1695,12040,7.455,52.958,0.119,1
+16 Law,2017/18,9940,850,4490,8.551,45.171,0.2,0
+16 Law,2018/19,10005,1140,4110,11.394,41.079,0.2,0
+16 Law,2019/20,10350,865,4705,8.357,45.459,0.2,0
+16 Law,2020/21,9920,705,5110,7.107,51.512,0.2,0
+16 Law,2021/22,9620,705,4950,7.328,51.455,0.2,1
+16 Law,2022/23,9275,745,4565,8.032,49.218,0.2,1
+16 Law,2023/24,9060,760,4415,8.389,48.731,0.2,1
+17 Business and management,2017/18,31545,2430,17825,7.703,56.507,0.282,0
+17 Business and management,2018/19,31980,3355,16700,10.491,52.22,0.282,0
+17 Business and management,2019/20,32750,2745,16985,8.382,51.863,0.282,0
+17 Business and management,2020/21,31430,2020,18835,6.427,59.927,0.282,0
+17 Business and management,2021/22,28345,1935,16480,6.827,58.141,0.282,1
+17 Business and management,2022/23,28055,2220,15780,7.913,56.247,0.282,1
+17 Business and management,2023/24,27440,2340,14560,8.528,53.061,0.282,1
+19 Language and area studies,2017/18,11435,750,5595,6.559,48.929,0.193,0
+19 Language and area studies,2018/19,11460,1135,4890,9.904,42.67,0.193,0
+19 Language and area studies,2019/20,10620,810,4630,7.627,43.597,0.193,0
+19 Language and area studies,2020/21,9755,615,4890,6.304,50.128,0.193,0
+19 Language and area studies,2021/22,7905,575,3820,7.274,48.324,0.193,1
+19 Language and area studies,2022/23,7080,580,3235,8.192,45.692,0.193,1
+19 Language and area studies,2023/24,6895,625,2985,9.065,43.292,0.193,1
+"20 Historical, philosophical and religious studies",2017/18,10370,750,4915,7.232,47.396,0.152,0
+"20 Historical, philosophical and religious studies",2018/19,10635,995,4480,9.356,42.125,0.152,0
+"20 Historical, philosophical and religious studies",2019/20,10105,780,4285,7.719,42.405,0.152,0
+"20 Historical, philosophical and religious studies",2020/21,9025,625,4180,6.925,46.316,0.152,0
+"20 Historical, philosophical and religious studies",2021/22,8300,555,3865,6.687,46.566,0.152,1
+"20 Historical, philosophical and religious studies",2022/23,7205,550,3195,7.634,44.344,0.152,1
+"20 Historical, philosophical and religious studies",2023/24,6980,610,2945,8.739,42.192,0.152,1
+22 Education and teaching,2017/18,11245,480,7205,4.269,64.073,0.088,0
+22 Education and teaching,2018/19,10480,705,6290,6.727,60.019,0.088,0
+22 Education and teaching,2019/20,8655,455,5445,5.257,62.912,0.088,0
+22 Education and teaching,2020/21,8925,400,5700,4.482,63.866,0.088,0
+22 Education and teaching,2021/22,8250,360,5295,4.364,64.182,0.088,1
+22 Education and teaching,2022/23,7440,410,4625,5.511,62.164,0.088,1
+22 Education and teaching,2023/24,6675,365,4105,5.468,61.498,0.088,1
+23 Combined and general studies,2017/18,675,50,260,7.407,38.519,0.215,0
+23 Combined and general studies,2018/19,755,65,270,8.609,35.762,0.215,0
+23 Combined and general studies,2019/20,925,75,415,8.108,44.865,0.215,0
+23 Combined and general studies,2020/21,835,75,390,8.982,46.707,0.215,0
+23 Combined and general studies,2021/22,680,40,340,5.882,50.0,0.215,1
+23 Combined and general studies,2022/23,790,75,310,9.494,39.241,0.215,1
+23 Combined and general studies,2023/24,830,75,365,9.036,43.976,0.215,1
+"24 Media, journalism and communications",2017/18,6120,425,3370,6.944,55.065,0.236,0
+"24 Media, journalism and communications",2018/19,5965,630,2875,10.562,48.198,0.236,0
+"24 Media, journalism and communications",2019/20,5065,375,2510,7.404,49.556,0.236,0
+"24 Media, journalism and communications",2020/21,4585,300,2560,6.543,55.834,0.236,0
+"24 Media, journalism and communications",2021/22,4260,345,2375,8.099,55.751,0.236,1
+"24 Media, journalism and communications",2022/23,3815,285,1925,7.471,50.459,0.236,1
+"24 Media, journalism and communications",2023/24,3655,305,1715,8.345,46.922,0.236,1
+"25 Design, and creative and performing arts",2017/18,25800,1475,12330,5.717,47.791,0.175,0
+"25 Design, and creative and performing arts",2018/19,26435,2475,10825,9.363,40.949,0.175,0
+"25 Design, and creative and performing arts",2019/20,25505,1830,11020,7.175,43.207,0.175,0
+"25 Design, and creative and performing arts",2020/21,24545,1460,11985,5.948,48.829,0.175,0
+"25 Design, and creative and performing arts",2021/22,23080,1615,10490,6.997,45.451,0.175,1
+"25 Design, and creative and performing arts",2022/23,22030,1595,9330,7.24,42.351,0.175,1
+"25 Design, and creative and performing arts",2023/24,19930,1435,7805,7.2,39.162,0.175,1
+"26 Geography, earth and environmental studies (natural sciences)",2017/18,4235,285,2220,6.73,52.42,0.07,0
+"26 Geography, earth and environmental studies (natural sciences)",2018/19,4045,410,1880,10.136,46.477,0.07,0
+"26 Geography, earth and environmental studies (natural sciences)",2019/20,4205,260,2020,6.183,48.038,0.07,0
+"26 Geography, earth and environmental studies (natural sciences)",2020/21,3530,200,1955,5.666,55.382,0.07,0
+"26 Geography, earth and environmental studies (natural sciences)",2021/22,3155,200,1740,6.339,55.151,0.07,1
+"26 Geography, earth and environmental studies (natural sciences)",2022/23,2940,185,1595,6.293,54.252,0.07,1
+"26 Geography, earth and environmental studies (natural sciences)",2023/24,2995,225,1520,7.513,50.751,0.07,1
+"26 Geography, earth and environmental studies (social sciences)",2017/18,2110,145,1225,6.872,58.057,0.07,0
+"26 Geography, earth and environmental studies (social sciences)",2018/19,2185,185,1110,8.467,50.801,0.07,0
+"26 Geography, earth and environmental studies (social sciences)",2019/20,1740,105,935,6.034,53.736,0.07,0
+"26 Geography, earth and environmental studies (social sciences)",2020/21,1535,75,890,4.886,57.98,0.07,0
+"26 Geography, earth and environmental studies (social sciences)",2021/22,1255,85,710,6.773,56.574,0.07,1
+"26 Geography, earth and environmental studies (social sciences)",2022/23,1150,90,630,7.826,54.783,0.07,1
+"26 Geography, earth and environmental studies (social sciences)",2023/24,1205,70,635,5.809,52.697,0.07,1

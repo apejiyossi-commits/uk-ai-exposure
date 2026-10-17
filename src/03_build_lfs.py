@@ -24,7 +24,7 @@ DER = ROOT / "data" / "derived"
 QUARTER = {"jm": 1, "aj": 2, "js": 3, "od": 4}
 KEEP = ["AGE", "SEX", "ILODEFR", "PWT24", "SOC20M", "SC20MMN", "SC20LMN", "WNLEFT11",
                 "EMPLEN", "FTPTWK", "PUBLICR", "HIQUL22D", "GOVTOF2", "THISWV", "GRSSWK",
-        "CRYOX7_EUL_Main", "STUCUR"]
+        "CRYOX7_EUL_Main", "STUCUR", "INDS07M", "INDD07M", "HOURPAY", "TTUSHR"]
 
 
 def wquantile(x, w, q):
@@ -141,6 +141,7 @@ for col, new, code in [("cryox7_eul_main", "uk_born", 1), ("stucur", "ft_student
     src = lfs[col] if col in lfs else pd.Series(np.nan, index=lfs.index)
     lfs[new] = (src == code).astype(float).where(src.notna())   # missing stays missing
 
+lfs["industry"] = lfs["inds07m"] if "inds07m" in lfs else np.nan     # SIC 2007 section, main job
 lfs.to_parquet(RAW / "lfs_analysis.parquet", index=False)
 
 # --- 6. Checks to read ------------------------------------------------------
@@ -160,6 +161,8 @@ print(f"\nEmployed with unit-group exposure: {e['exp_unit'].notna().mean():.1%}"
 print(f"Employed with minor-group exposure: {e['exp_minor'].notna().mean():.1%}")
 print(f"Unemployed with a last-job minor group: {u['minor'].notna().mean():.1%}")
 print(f"Unemployed with minor-group exposure:  {u['exp_minor'].notna().mean():.1%}")
+print(f"Employed with an industry section: {e['industry'].notna().mean():.1%}; "
+      f"with hourly pay: {e['hourpay'].notna().mean() if 'hourpay' in e else 0:.1%}")
 
 print(f"\nMinor-group cutoffs (2022 employment): 25th pct {p25:.3f}, 75th pct {p75:.3f}")
 b = lfs[(lfs["year"] == 2022) & (lfs["unemp"] == 0)]

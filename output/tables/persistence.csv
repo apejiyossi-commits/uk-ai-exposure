@@ -1,0 +1,4 @@
+question,high_rate_pre_%,zero_rate_pre_%,estimate_pp,se_pp,p,people,n_high,n_zero
+not employed in wave 1 -> in that job type in wave 5,14.0091,6.1787,-12.9356,7.869,0.1012,312,31,27
+recent job in wave 1 -> employed in wave 5,91.4876,82.8744,-1.8581,15.9946,0.9079,82,46,36
+recent job in wave 1 -> same job type in wave 5,65.6557,69.2791,26.6668,26.6246,0.3203,82,46,36

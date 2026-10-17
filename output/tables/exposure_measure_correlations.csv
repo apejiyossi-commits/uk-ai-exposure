@@ -1,0 +1,16 @@
+measure_a,measure_b,pearson,spearman
+observed,robot,-0.411,-0.59
+gpt_beta,observed,0.681,0.769
+gpt_beta,gpt_human,0.869,0.884
+gpt_beta,robot,-0.662,-0.684
+gpt_human,observed,0.651,0.774
+gpt_human,robot,-0.635,-0.679
+aioe,observed,0.598,0.768
+aioe,gpt_beta,0.84,0.831
+aioe,gpt_human,0.877,0.867
+aioe,robot,-0.732,-0.773
+aioe,automation,0.139,0.105
+automation,observed,0.279,0.237
+automation,gpt_beta,0.27,0.225
+automation,gpt_human,0.171,0.142
+automation,robot,-0.102,-0.013

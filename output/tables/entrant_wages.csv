@@ -1,0 +1,7 @@
+sample,fixed_effects,estimate_log_points,se,p,change_%,min_cell_n,people
+new starters 22-25,quarter,-0.108,0.1169,0.3578,-10.234,77,369
+new starters 22-25,quarter + occupation,-0.1814,0.1323,0.1755,-16.5933,77,369
+all employees 22-25,quarter,-0.0118,0.0306,0.7,-1.1728,680,4072
+all employees 22-25,quarter + occupation,-0.0266,0.0294,0.3673,-2.6218,680,4072
+new starters 26-64,quarter,-0.0013,0.0502,0.9801,-0.1252,424,1984
+new starters 26-64,quarter + occupation,-0.0343,0.0436,0.4327,-3.3714,424,1984
